@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+  <head>
+    <meta charset="UTF-8">
+	<meta name="author" content="Fabrice Perez">
+    <title>[Web](1) HTML</title>
+	
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  
+  <body lang=FR link=blue vlink=purple>
+    <div style='border-bottom:solid #4F81BD 1.0pt'>
+      <p class=MsoTitle>Le Web</p>
+    </div>
+    <p class=MsoSubtitle>Le langage HTML</p> 
+
+	<ol>
+    <h1>HTML</h1>
+    <div class=Cours>
+	<img style="float:left; height:7em;" src="Web-1-html-images/html-http-url-3-circles.png" alt="le web est la rÃ©union des technologies HTML, HTTP et URL">
+      <p>Depuis la naissance du Web en 1989, le langage <b>HTML (<i>HyperText Markup Language</i>)</b> est un des trois piliers du World Wide Web, avec le protocole <b><i>Hypertext Transfer Protocol</i> (HTTP)</b> et les <b>adresses Web (URL)</b>. Toutes les pages Web sont Ã©crites en langage HTML, souvent dans sa derniÃ¨re versionÂ :  HTML5.</p>
+      <p>Toutes les pages Web sont Ã©crites en langage HTML, souvent dans sa derniÃ¨re versionÂ :  HTML5. Le langage HTML est souvent utilisÃ© conjointement avec des feuilles de style en cascade (<b>CSS</b>) et le langage de programmation <b>JavaScript</b>.</p>
+	</div>
+	<div class="after">
+      <img  style="float:right; margin: 0 0 0 0; height:5em;" src="Web-1-html-images/html5_logo.png" alt="logo HTML 5">
+      <p >Si HTML permet d'afficher des pages d'une grande variÃ©tÃ© de contenus, de mise en forme, d'animations, etc., il a Ã©galement la qualitÃ© de pouvoir Ãªtre Ã©crit avec un simple Ã©diteur de texte. Il suffit de crÃ©er un fichier portant le suffixe .html puis de l'ouvrir dans un navigateur Web (par un clic droit et sÃ©lectionner ouvrir avec votre navigateur web).</p>
+	  
+	</div>
+    <h1 class="after">Balises</h1>
+	<div class=Cours>
+      <p>HTML <b>n'est pas un langage de programmation</b>, câ€™est un <b>langage de balisage</b> conÃ§u pour reprÃ©senter une pages web et son contenu.</p>
+    </div>
+	<p>Prenons un exempleÂ de code Ã©crit en HTML.</p>
+	<div style="text-align:center">
+	<code>
+	  &lt;p&gt;Mon premier paragraphe en HTML.&lt;/p&gt;
+	</code>
+	</div>
+	<p>On appelle cette ligne de code un <b>Ã©lÃ©ment</b> HTML. Il comporte trois parties&nbsp;:</p>
+	<ul>
+	   <li>&lt;p&gt; est la <b>balise ouvrante</b> de lâ€™Ã©lÃ©ment&nbsp;;</li>
+        <li><code>Mon premier paragraphe en HTML.</code>Â est le texte du paragraphe&nbsp;;</li>
+		<li>&lt;/p&gt; est la <b>balise fermante</b> correspondante (noter le Â«Â /&nbsp;Â»)&nbsp;;</li>
+	</ul>
+	<li>Quelles sont les trois parties de lâ€™Ã©lÃ©ment HTML suivant&nbsp;?</li>
+	<div style="text-align:center">
+	<code>
+	  &lt;title&gt;Ma premiÃ¨re page HTML.&lt;/titlep&gt;
+	</code>
+	</div>
+	<table style="width:100%;">
+	<tr>
+		<th>Balise ouvrante</th>
+		<th>Contenu</th>
+		<th>Balise fermante</th>
+	  </tr>
+	  <tr>
+		<th><div><textarea class=Reponse rows="2"></textarea></div></th>
+		<th><div><textarea class=Reponse rows="2"></textarea></div></th>
+		<th><div><textarea class=Reponse rows="2"></textarea></div></th>
+	  </tr>
+	</table>
+	<p>Certains Ã©lÃ©ments nâ€™ont quâ€™une seule balise, sans balise fermante, appelÃ© <b>balise orpheline</b>. Par exemple la balise suivante permet  dâ€™insÃ©rer un retour Ã  la ligne dans un texte.</p>
+	<div style="text-align:center">
+	<code>
+	  &lt;br&gt;
+	</code>
+	</div>
+	<div class=Cours>
+      <p>Une page web sâ€™Ã©crit en HTML par une suite dâ€™<b>Ã©lÃ©ments</b>. Chaque Ã©lÃ©ment est constituÃ© de <b>balises</b> pour structurer du texte, le mettre en forme, ajouter des images et d'autres contenus, etc. </p>
+    </div>
+	<p></p>
+	<p style="border-style:double; text-align:center"><b>COPIER LE RÃ‰PERTOIRE AVEC LES FICHIERS DE Lâ€™ACTIVITÃ‰ DANS VOS DOCUMENTS PERSONNELS.</b></p>
+	
+		<!-- fin page 1 -->
+	<div style="break-after:page"></div>
+	<!-- dÃ©but page 2 -->
+
+	<li>Ouvrir le fichier Â«Â 1-page.html&nbsp;Â» <u>dans un navigateur</u> (par un double-clic sur le fichier ou clic-droit puis menu Â«Â Ouvrir avec&nbsp;Â» pour choisir le navigateur de votre choix).  Quâ€™affiche cette page&nbsp;?</li>
+	<div><textarea class=Reponse rows="2"></textarea></div>
+	
+	<li>Ouvrir maintenant ce mÃªme fichier Â«&nbsp;page-1.html&nbsp;Â» Ã  <u>l'aide du blocnote</u>.  Il est Ã©crit en langage HTML et contient un certain nombre de balises standards.</li>
+	<ul>
+	  <li>Trouver les cinq balises <u>ouvrantes</u> utilisÃ©es pour afficher cette page.</li>
+	  <div><textarea class=Reponse rows="2"></textarea></div>
+	  <li>Trouver les cinq balises <u>fermantes</u> correspondantes.</li>
+	  <div><textarea class=Reponse rows="2"></textarea></div>
+	  <li>Trouver les deux balises <u>orphelines</u>.</li>
+	  <div><textarea class=Reponse rows="2"></textarea></div>
+	</ul>
+		
+    <li>On peut observer que le fichier contient un Ã©lÃ©ment	<code>&lt;title&gt;Ma premiÃ¨re page HTML.&lt;/titlep&gt;</code>. OÃ¹ apparaÃ®t le texte de cet Ã©lÃ©ment quand on ouvre ce fichier dans un navigateur&nbsp;?</li>
+	<div><textarea class=Reponse rows="2"></textarea></div>
+	<li>Le texte Â«&nbsp;Mon premier commentaire&nbsp;Â» n'apparaÃ®t pas dans la page web, car il est dans une balise de commentaire. Comment sâ€™Ã©crit  cette balise&nbsp;?</li>
+	<div><textarea class=Reponse rows="2"></textarea></div>
+	
+    <p>Noter comment <b>les Ã©lÃ©ments HTML sâ€™imbriquent les uns dans les autres</b>. Par exemple les Ã©lÃ©ments <code>&lt;head&gt;</code> et <code>&lt;body&gt;</code><sup><a href="#1">1</a></sup> sont imbriquÃ©s dans lâ€™Ã©lÃ©ment <code>&lt;html&gt;</code>, et lâ€™Ã©lÃ©ment <code>&lt;title&gt;</code> est dans <code>&lt;body&gt;</code>.</p>
+	
+	<h1>Formater du texte</h1>
+	<li>Ouvrir maintenant le fichier Â«&nbsp;2-un-texte-important.html&nbsp;Â» Ã  l'aide du blocnote et dans un navigateur.<br>
+	Ã€ quoi servent les balises <code>&lt;b&gt;</code>Â et <code>&lt;/b&gt;</code> autour dâ€™une partie du texte&nbsp;?</li>
+    <div><textarea class=Reponse rows="1"></textarea></div>
+	<li>Remplacer <code>&lt;b&gt;</code> parÂ <code>&lt;i&gt;</code> et <code>&lt;/b&gt;</code> parÂ <code>&lt;/i&gt;</code>. Ã€ quoi servent les balises <code>&lt;i&gt;</code>Â et <code>&lt;i&gt;</code>&nbsp;?</li>
+	<div><textarea class=Reponse rows="1"></textarea></div>
+	<li>Remplacer <code>&lt;i&gt;</code> parÂ <code>&lt;u&gt;</code> et <code>&lt;/i&gt;</code> parÂ  <code>&lt;/u&gt;</code> . Ã€ quoi servent les balises <code>&lt;u&gt;</code>Â et <code>&lt;/u&gt;</code>&nbsp;?</li>
+	<div><textarea class=Reponse rows="1"></textarea></div>
+	<li>Comment afficher le texte important au milieu du paragraphe en gras, soulignÃ© et italique Ã  la fois&nbsp;?</li>
+	<div><textarea class=Reponse rows="2"></textarea></div>
+	<p>Quand on place des <b>Ã©lÃ©ments au sein d'autres Ã©lÃ©ments</b>, ils doivent Ãªtre bien <b>imbriquÃ©s les uns dans les autres</b>, par exemple le code <code>&lt;p&gt;&lt;b&gt;texte en gras&lt;/p&gt;&lt;/b&gt;</code> est incorrect.</li>
+	
+	
+	<!-- foonote -->
+	
+	<div>
+	<hr align=left size=1 width="33%">
+	<div id=ftn1>
+	<p class=FootnoteText><a href="#_ftnref1" name="_ftn1"><span class=FootnoteReference>[1]</span></a>L'Ã©lÃ©ment HTML <code>&lt;head&gt;</code> fournit des informations gÃ©nÃ©rales (mÃ©tadonnÃ©es) sur la page, alors que  l'Ã©lÃ©ment <code>&lt;body&gt;</code> reprÃ©sente le contenu de la page.</p>
+	</div>
+	
+	<!-- fin page 2 -->
+	<div style="break-after:page"></div>
+	<!-- dÃ©but page 3 -->
+	
+		 
+	<h1>Niveaux de titres</h1> 
+	<li>Ouvrir maintenant le fichier Â«&nbsp;3-avocat.html&nbsp;Â» Ã  l'aide du blocnote et dans un navigateur.</li>
+	<li>Ã€ quoi servent les Ã©lÃ©ments <code>&lt;h1&gt;</code> et <code>&lt;h2&gt;</code>&nbsp;?</li>
+	<div><textarea class=Reponse rows="2"></textarea></div>
+	<li>Les trois derniers titres sont mal placÃ©s, ils devraient Ãªtre des sous-titres de Â«&nbsp;Bienfaits nutritionnels&nbsp;Â». Quelles balises faut-il utiliser pour quâ€™ils apparaissent Ã  un niveau de titre moins important&nbsp;?</li>
+	<div><textarea class=Reponse rows="2"></textarea></div>
+	<li>Trouver le dernier niveau de titre possible en HTML (autrement le plus grand nombre acceptÃ© par <code>&lt;h...&gt;</code>.</li>
+	<div><textarea class=Reponse rows="2"></textarea></div>
+	<p>RappelÂ : lâ€™Ã©lÃ©ment  <code>&lt;title&gt;</code> ne dÃ©finit pas les titres affichÃ©s dans la pageÂ (voir questionÂ 4)Â !</p>
+	
+	
+	<h1>Listes</h1>
+	<li>Ouvrir maintenant le fichier Â«&nbsp;4-guacamole.html&nbsp;Â» Ã  l'aide du blocnote et dans un navigateur. </li>
+	<li>Sous quelle forme sâ€™affiche le texte entre les balises <code>&lt;ul&gt;</code> et <code>&lt;ol&gt;</code>&nbsp;?</li>
+    <div><textarea class=Reponse rows="2"></textarea></div>
+    <li> Ã€ quoi sert la balise <code>&lt;li&gt;</code>&nbsp;?</li>
+	<div><textarea class=Reponse rows="2"></textarea></div>
+	<li>Quelle diffÃ©rence y-a-t-il entre les balises <code>&lt;ul&gt;</code> et <code>&lt;ol&gt;</code>&nbsp;?</li>
+	<div><textarea class=Reponse rows="2"></textarea></div>
+	<li>Ouvrir le fichier Â«5-tomates-provencales.html&nbsp;Â» avec un navigateur. Le texte de la recette de tomates provenÃ§alesÂ nâ€™a pas Ã©tÃ© mis en forme pour sâ€™afficher de faÃ§on lisible dans une page web.<br>
+	Modifier le code HTML de cette page pour quâ€™elle soit facile Ã  lire.Â  Ne pas oublier le titre.</li>
+	<div><textarea class=Reponse rows="10"></textarea></div>
+	
+		
+	<!-- fin page 3 -->
+	<div style="break-after:page"></div>
+	<!-- dÃ©but page 4 -->
+	<h1>Attributs</h1>
+	<p>On peut modifier encore plus lâ€™apparence dâ€™une page web, par exemple pour afficher un paragraphe en bleu, on utilise lâ€™attribut <code>style="color:blue;"</code> <b>Ã  lâ€™intÃ©rieur de la balise</b> ouvrante <code>&lt;p&gt;</code>&nbsp;:</p>
+	<div style="text-align:center">
+	<code>
+	  &lt;p style="color:blue;"&gt;Je suis Ã©crit en bleu&lt;/p&gt;
+	</code>
+	</div>
+	<div class=Cours>
+      <p>Les Ã©lÃ©ments peuvent contenir des informations supplÃ©mentaires pour modifier la faÃ§on dont ils sâ€™affichentÂ : ce sont des <b>attributs placÃ©s Ã  lâ€™intÃ©rieur dâ€™un balise.</b></p>
+    </div>
+	<p>Il existe de trÃ¨s nombreux attributs de style pour mettre en forme lâ€™apparence dâ€™une page web.</p>
+    <li>Ouvrir maintenant le fichier Â«&nbsp;6-avoir-du-style.html&nbsp;Â» Ã  l'aide du blocnote et dans un navigateur et trouver les  attributs qui permettent dâ€™afficher le texte... </li>
+	<ul>
+    <li>en bleu.</li>
+	<div><textarea class=Reponse rows="1"></textarea></div>
+    <li>au centre en vert.</li>
+	<div><textarea class=Reponse rows="1"></textarea></div>
+    <li>en rouge dans la police Arial.</li>
+	<div><textarea class=Reponse rows="1"></textarea></div>
+    <li>en jaune sur fonds noir.</li>
+	<div><textarea class=Reponse rows="1"></textarea></div>
+    <li>en violet en police de taille 10 pixels.</li>
+	<div><textarea class=Reponse rows="1"></textarea></div>
+    </ul>
+	
+
+	 <h1>Liens hypertexte</h1>
+	 <p>Les <b>liens hypertexte relient les pages web entre elles</b> par un simple clic. Câ€™est un aspect fondamental de la Â«&nbsp;toileÂ mondialeÂ» ou <i>world wide web</i> en anglais.</p>
+	 <p>Par exemple pour afficher le texte Â«&nbsp;Wiki&nbsp;Â» avec un lien vers le site https://www.fr.wikipedia.orgÂ on utilise lâ€™attribut <code>href="https://www.fr.wikipedia.org"</code> Ã  lâ€™intÃ©rieur de la balise ouvrante <code>&lt;a&gt;</code>&nbsp;:</p>
+	 <div style="text-align:center">
+	<code>
+	  &lt;a href="https://www.fr.wikipedia.org"&gt;Wiki&lt;/a&gt;
+	</code>
+	</div>
+	<div class=Cours>
+      <p>L'Ã©lÃ©ment <code>&lt;a&gt;</code> (pour ancre ou <i>anchor</i> en anglais) permet de crÃ©er un lien hypertexte. La balise ouvrante <code>&lt;a&gt;</code> doit comporter <b>un attribut href</b> (pour Â«&nbsp;<i>hypertexte referenceÂ»</i>), <b>indiquant la destination du lien</b>.</p>
+    </div>
+	<li>Ouvrir le fichier Â«&nbsp;7-animaux.html&nbsp;Â» avec un navigateur. Que se passe-t-il si on clique sur Â«&nbsp;dauphins&nbsp;Â»&nbsp;?</li>
+	<div><textarea class=Reponse rows="2"></textarea></div>
+	<li>Comment faut-il modifier le fichier Â«&nbsp;dauphin.html&nbsp;Â» pour pouvoir revenir Ã  la page principale&nbsp;?</li>
+	<div><textarea class=Reponse rows="2"></textarea></div>
+	<li>Ajouter les liens hypertextes manquant au fichier Â«&nbsp;page-7-mes-animaux.htmlÂ &nbsp;Â» pour accÃ©der aux pages Â«&nbsp;tortue.html&nbsp;Â» et Â«&nbsp;lievre.html&nbsp;Â», et dans ces deux fichiers pour revenir Ã  la page principale. VÃ©rifier que lâ€™on peut naviguer simplement entre toutes ces pages.</li>
+	 
+	 
+	 <!-- fin page 4 -->
+	<div style="break-after:page"></div>
+	<!-- dÃ©but page 5 -->
+		 
+	<li>Observer le dernier lien hypertexte dans le fichier Â«&nbsp;7-animaux.html&nbsp;Â» qui permet dâ€™ouvrir la page Â«&nbsp;7-loup.html&nbsp;Â». Ici la balise <code>&lt;a&gt;</code> comporte  un attribut supplÃ©mentaire, quel est-il&nbsp;?</li>
+	<div><textarea class=Reponse rows="2"></textarea></div>
+	
+	<li> Cliquer sur ce lien. Pourquoi la page sâ€™ouvre de faÃ§on diffÃ©rente des autresÂ ? Ã€ quoi sert cet attribut supplÃ©mentaire&nbsp;?</li>
+	<div><textarea class=Reponse rows="2"></textarea></div>
+	
+
+	<h1>Images</h1>
+	
+    <div class=Cours>
+	  <p>L'Ã©lÃ©ment <code>&lt;imb&gt;</code> (pour image) permet dâ€™afficher une image. La balise <code>&lt;imb&gt;</code> est une balise <b>orpheline</b> (pas de balise fermante). Elle doit comporter deux attributs&nbsp;:</p>
+	  <ul>
+	    <li>un <b>attribut src</b> (pour source), Â indiquant le <b>fichier de lâ€™image</b>.</li>
+		<li>un <b>attribut alt</b> (pour alternatif), Â indiquant un <b>texte alternatif</b> si lâ€™image ne sâ€™affiche pas.</li>
+	  </ul>
+    </div>
+
+	<p>Par exemple pour afficher une image Â« dauphin.jpg&nbsp;Â» situÃ©e dans le rÃ©pertoire image, on utilise les deux attributs <code>src="images/dauphin.jpg"</code> et <code>alt="Un dauphin dans la mer"</code> Ã  lâ€™intÃ©rieur de la balise ouvrante <code>&lt;imb&gt;</code>&nbsp;:</p>
+    <div style="text-align:center">
+	<code>
+	  &lt;img src="images/dauphin.jpg" alt="Un dauphin dans la mer"&gt;
+	</code>
+	</div>
+	
+	<li>Ajouter lâ€™image Â«images/dauphin.jpg&nbsp;Â»  au fichier Â«&nbsp;7-dauphin.html&nbsp;Â»  et vÃ©rifier que lâ€™image sâ€™affiche dans la page avec un navigateur.</li>
+	<li>Ajouter lâ€™image Â«tortue.jpg&nbsp;Â»  au fichier Â«&nbsp;7-tortue.html&nbsp;Â» avec le texte alternatif Â«&nbsp;Une tortue sur lâ€™herbeÂ». Le fichier de lâ€™image est corrompu, quâ€™affiche le navigateur Ã  la place de l'image&nbsp;?</li>
+	<div><textarea class=Reponse rows="2"></textarea></div>
+
+    <li>Corriger le nom de fichier image en Â«&nbsp;tortue-2.jpg&nbsp;Â» et vÃ©rifier que lâ€™image sâ€™affiche correctement. Est-ce que le texte alternatif sâ€™affiche&nbsp;?</li>
+	<div><textarea class=Reponse rows="2"></textarea></div>
+
+    <li> Ajouter lâ€™image Â«lievre.jpg&nbsp;Â»  au fichier Â«&nbsp;7-lievre.html&nbsp;Â» avec le texteÂ alternatif Â«&nbsp;Un petit lapin mignon&nbsp;Â». On constate que lâ€™image est un peu trop grande. Ajouter un attribut supplÃ©mentaire pour spÃ©cifier la hauteur de lâ€™image <code>height="400px"</code>. Que constate-t'onÂ dans le navigateur&nbsp;?</li>
+	<div><textarea class=Reponse rows="2"></textarea></div>
+
+	<li> CrÃ©er un nouveau fichier Â«&nbsp;ma-page-snt.html&nbsp;Â».</li>
+
+	<!-- fin page 5 -->
+	<div style="break-after:page"></div>
+	<!-- dÃ©but page 6 -->
+			
+	<li>ComplÃ©ter le code HTML permettant dâ€™afficher la page ci-dessous (NoteÂ : utiliser l'image Â«Â snt.pngÂ Â»)&nbsp;:</li>
+	<div><textarea class=Reponse rows="11"></textarea></div>
+
+
+	<div style="text-align: center;">
+	<img tborder=0 width="75%" height="auto" src="Web-1-html-images/ma-page-snt.png">
+	</div>
+	
+	<h1>Rappel des balises</h1>
+	<p></p>
+	<table style= "width:100%; border: 2px single black;border-collapse: collapse;" >
+	  <tr>
+		<th style= "border: 1px solid;">Balise ouvrante</th>
+		<th style= "border: 1px solid;">Balise fermante</th>
+		<th style= "border: 1px solid;">RÃ´le</th>
+	  </tr>
+	  <tr>
+		<td style= "border: 1px solid;"><code>&lt;!DOCTYPE html&gt;</code></td>
+		<td style= "border: 1px solid;"></td>
+		<td style= "border: 1px solid;">Document Ã©crit en HTML</td>
+	  </tr>
+	  <tr>
+		<td style= "border: 1px solid;"><code>&lt;html&gt;</code></td>
+		<td style= "border: 1px solid;"><code>&lt;/html&gt;</code></td>
+		<td style= "border: 1px solid;">Zone contenant du code HTML</td>
+	  </tr>
+	  <tr>
+		<td style= "border: 1px solid;"><code>&lt;head&gt;</code></td>
+		<td style= "border: 1px solid;"><code>&lt;/head&gt;</code></td>
+		<td style= "border: 1px solid;">En-tÃªte du document</td>
+	  </tr>
+	  <tr>
+		<td style= "border: 1px solid;"><code>&lt;title&gt;</code></td>
+		<td style= "border: 1px solid;"><code>&lt;/title&gt;</code></td>
+		<td style= "border: 1px solid;">Titre du document</td>
+	  </tr>
+	  <tr>
+		<td style= "border: 1px solid;"><code>&lt;body&gt;</code></td>
+		<td style= "border: 1px solid;"><code>&lt;/body&gt;</code></td>
+		<td style= "border: 1px solid;">Contenu de la page</td>
+	  </tr>
+	  <tr>
+		<td style= "border: 1px solid;"><code>&lt;h1&gt;</code> Ã  <code>&lt;h6&gt;</code></td>
+		<td style= "border: 1px solid;"><code>&lt;/h1&gt;</code> Ã  <code>&lt;/h6&gt;</code></td>
+		<td style= "border: 1px solid;">6 niveaux de titre </td>
+	  </tr>
+	  <tr>
+		<td style= "border: 1px solid;"><code>&lt;p&gt;</code></td>
+		<td style= "border: 1px solid;"><code>&lt;/p&gt;</code></td>
+		<td style= "border: 1px solid;">Paragraphe</td>
+	  </tr>
+	  <tr>
+		<td style= "border: 1px solid;"><code>&lt;i&gt;</code>, <code>&lt;strong&gt;</code>, <code>&lt;u&gt;</code></td>
+		<td style= "border: 1px solid;"><code>&lt;/i&gt;</code>, <code>&lt;/strong&gt;</code>, <code>&lt;/u&gt;</code></td>
+		<td style= "border: 1px solid;">Paragraphe</td>
+	  </tr>
+	  	  <tr>
+		<td style= "border: 1px solid;"><code>&lt;body&gt;</code></td>
+		<td style= "border: 1px solid;"><code>&lt;/body&gt;</code></td>
+		<td style= "border: 1px solid;">Contenu de la page</td>
+	  </tr>
+	  	  <tr>
+		<td style= "border: 1px solid;"><code>&lt;br&gt;</code></td>
+		<td style= "border: 1px solid;"></td>
+		<td style= "border: 1px solid;">Retour Ã  la ligne</td>
+	  </tr>
+	  	  <tr>
+		<td style= "border: 1px solid;"><code>&lt;!--&gt;</code></td>
+		<td style= "border: 1px solid;"><code>&lt;--&gt;</code></td>
+		<td style= "border: 1px solid;">Commentaire</td>
+	  </tr>
+ 	  <tr>
+		<td style= "border: 1px solid;"><code>&lt;a  href=...&gt;</code></td>
+		<td style= "border: 1px solid;"><code>&lt;/a&gt;</code></td>
+		<td style= "border: 1px solid;">Lien hypertexte</td>
+	  </tr>
+   	  <tr>
+		<td style= "border: 1px solid;"><code>&lt;img src=â€¦ alt=...&gt;</code></td>
+		<td style= "border: 1px solid;">></td>
+		<td style= "border: 1px solid;">Image</td>
+	  </tr>
+
+	  </table>
+	
+	<!-- fin page 6-->
+	<div style="break-after:page"></div>
+	<!-- dÃ©but page 7 -->
+	
+	   <p class=MsoSubtitle>Pour aller plus loin</p>
+	   <h1>JavaScript</h1>
+	   <div>
+        <img  style="float:right; margin: 0 0 0 0; height:20em;" src="Web-1-html-images/ma-page-snt.png" alt="ma page de SNT"></img>
+        <br><br><br>
+		<li>Ouvrir le fichier Â«&nbsp;ma-page-web.html&nbsp;Â» de la page web crÃ©Ã©e.</li>
+	   </div>
+	   
+        <p class="cours" style="clear: both;">JavaScript permet d'afficher des <b>pages Web dynamiques</b> en y incluant des programmes encadrÃ©s par les balises <code>&lt;script&gt;</code> et <code>&lt;/script&gt;</code>.</p>
+	    <li>Ajouter le script suivant dans la section <code>&lt;body&gt;</code>.</li>
+	   <code>
+	  &lt;script&gt;
+	  <br>
+	  alert('Ca marche !');
+	  <br>
+	  &lt;script&gt;
+	  <br>
+      </code>
+	<p></p>
+	<p>Comment la page a Ã©tÃ© modifiÃ©e&nbsp;?</p>
+	<div><textarea class=Reponse rows="2"></textarea></div>
+	
+	<li>Si on ne veut pas afficher le message automatiquement, on peut utiliser un bouton. Remplace le script prÃ©cÃ©dent (y compris les balises ouvrante et fermante) par&nbsp;:</li>
+	<code>&lt;button type="button" onclick="alert('Ca marcheÂ ! ')"&gt;Click&lt;/button&gt;</code>
+	<p></p>
+	<p>Que fait ce bouton&nbsp;?</p>
+	<div><textarea class=Reponse rows="1"></textarea></div>
+	
+
+	
+	<p>On va maintenant combiner les deux approches en utilisant une fonction JavaScript.  Une fonction est un bloc d'instructions qui permet d'effectuer une tache particuliÃ¨re quand elle est appelÃ©e par un Ã©vÃ©nement qui se produit, par exemple si un bouton est cliquÃ©.</p>
+    <p>Attention que le corps d'une fonction JavaScript est dÃ©limitÃ© par des accolades {â€¦ } et toutes ses instructions se terminent par un point-virgule.</p>
+		
+	<li>Modifier le bouton et ajoute une fonction de la faÃ§on suivante&nbsp;:</li>
+	<code>
+	&lt;button type="button" onclick="maFonction()"&gt;Click&lt;/button&gt;
+	<br>
+	&lt;script&gt;
+	<br>
+	function maFonction(){
+	<br>
+     &nbsp;&nbsp;&nbsp;&nbsp;alert('Ca marcheÂ !');
+	<br>
+	}
+	<br>
+	&lt;/script&gt;
+	<br>
+    </code>
+	<p></p>
+	<p>Obtient-on le mÃªme rÃ©sultat que prÃ©cÃ©demment&nbsp;?</p>
+	<div><textarea class=Reponse rows="1"></textarea></div>
+
+		<!-- fin page 7 -->
+	<div style="break-after:page"></div>
+	<!-- dÃ©but page 8 -->
+	
+	<p>Au lieu d'ouvrir une fenÃªtre pour afficher le message, on va maintenant afficher le message directement sur la page. Pour cela, on utilise la fonction <code>document.getElementById(id)</code> qui permet d'accÃ©der Ã Â un Ã©lÃ©ment HTML prÃ©cis de la page. L'attribut <code>id</code> dÃ©finit cet Ã©lÃ©ment HTML, et la propriÃ©tÃ© innerHTML dÃ©finit son contenu.</p>
+	
+	<li>Modifier la page avec le code suivant&nbsp;:</li>
+	<code>
+	&lt;button type="button" onclick="maFonction()"&gt;Click&lt;/button&gt;
+	<br>
+	&lt;p id="mon-id"&gt;Ca marche ?&lt;/p&gt;
+	<br>
+	&lt;script&gt;
+	<br>
+	function maFonction(){
+	<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;document.getElementById("mon-id").innerHTML = 'Oui !';
+	<br>
+	}
+	<br>
+	&lt;/script&gt;
+	</code>
+	<p>Comment est modifiÃ© maintenant l'affichage de la page Web quand on clique sur le bouton&nbsp?</p>
+	<div><textarea class=Reponse rows="3"></textarea></div>
+
+	<p>On peut faire Ã©normÃ©ment de choses avec les fonctions JavaScript, par exemple en utilisant des variables. VoilÃ Â  un exemple de page qui affiche la valeur d'une variable <code>largeur</code> et d'un bouton qui ajoute <code>10</code> Ã Â  sa valeur et affiche cette nouvelle valeur&nbsp;:</p>
+	<code>
+	&lt;button type="button" onclick="augmente()"&gt;+ 10&lt;/button&gt;
+	<br>
+	&lt;p id="mon-id">200&lt;/p&gt;
+	<br>
+	&lt;script&gt;
+	<br>
+    var largeur = 200;
+	<br>
+	function augmente(){
+	<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;largeur = largeur + 10;
+	<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;document.getElementById("mon-id").innerHTML = largeur;
+	<br>
+	}
+	<br>
+	&lt;/script&gt;
+	</code>
+	<p></p>
+	<li>Ajouter un second bouton sur la page qui lui permet de diminuer la valeur de <code>largeur</code> quand on clique dessus.</li>
+	<div><textarea class=Reponse rows="10"></textarea></div>
+
+	</ol>		
+  </body>
+</html>
