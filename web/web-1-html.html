@@ -34,19 +34,19 @@
 	<p>Prenons un exemple&nbsp;de code écrit en HTML.</p>
 	<div style="text-align:center">
 	<code>
-	  &lt;p&gt;Mon premier paragraphe en HTML.&lt;/p&gt;
+	  &lt;p&gt;Mon premier paragraphe en HTML&lt;/p&gt;
 	</code>
 	</div>
 	<p>On appelle cette ligne de code un <b>élément</b> HTML. Il comporte trois parties&nbsp;:</p>
 	<ul>
 	   <li>&lt;p&gt; est la <b>balise ouvrante</b> de l'élément&nbsp;;</li>
-        <li><code>Mon premier paragraphe en HTML.</code>&nbsp;est le texte du paragraphe&nbsp;;</li>
+        <li>«<code>Mon premier paragraphe en HTML</code>»&nbsp;est le texte du paragraphe&nbsp;;</li>
 		<li>&lt;/p&gt; est la <b>balise fermante</b> correspondante (noter le&nbsp;«&nbsp;/&nbsp;»)&nbsp;;</li>
 	</ul>
 	<li>Quelles sont les trois parties de l'élément HTML suivant&nbsp;?</li>
 	<div style="text-align:center">
 	<code>
-	  &lt;title&gt;Ma première page HTML.&lt;/titlep&gt;
+	  &lt;title&gt;Ma première page HTML&lt;/title&gt;
 	</code>
 	</div>
 	<table style="width:100%;">
@@ -129,7 +129,7 @@
 	<div><textarea class=Reponse rows="2"></textarea></div>
 	<li>Les trois derniers titres sont mal placés, ils devraient être des sous-titres de&nbsp;«&nbsp;Bienfaits nutritionnels&nbsp;». Quelles balises faut-il utiliser pour qu'ils apparaissent à un niveau de titre moins important&nbsp;?</li>
 	<div><textarea class=Reponse rows="2"></textarea></div>
-	<li>Trouver le dernier niveau de titre possible en HTML (autrement le plus grand nombre accepté par <code>&lt;h...&gt;</code>.</li>
+	<li>Trouver le dernier niveau de titre possible en HTML (autrement le plus grand nombre accepté par <code>&lt;h...&gt;</code>).</li>
 	<div><textarea class=Reponse rows="2"></textarea></div>
 	<p>Rappel&nbsp;: l'élément  <code>&lt;title&gt;</code> ne définit pas les titres affichés dans la page&nbsp;(voir question&nbsp;4)&nbsp;!</p>
 	
@@ -177,16 +177,17 @@
 	
 
 	 <h1>Liens hypertexte</h1>
-	 <p>Les <b>liens hypertexte relient les pages web entre elles</b> par un simple clic. C'est un aspect fondamental de la&nbsp;«&nbsp;toile&nbsp;mondiale» ou <i>world wide web</i> en anglais.</p>
+	 <p>Les <b>liens hypertexte qui relient les pages web entre elles</b> par un simple clic sont un aspect fondamental du web.</p>
+	 <div class=Cours>
+      <p>L'élément <code>&lt;a&gt;</code> (pour ancre ou <i>anchor</i> en anglais) permet de créer un lien hypertexte. La balise ouvrante <code>&lt;a&gt;</code> doit comporter <b>un attribut href</b> (pour&nbsp;«&nbsp;<i>hypertexte reference»</i>), <b>indiquant la destination du lien</b>.</p>
+    </div>
 	 <p>Par exemple pour afficher le texte&nbsp;«&nbsp;Wiki&nbsp;» avec un lien vers le site https://www.fr.wikipedia.org&nbsp;on utilise l'attribut <code>href="https://www.fr.wikipedia.org"</code> à l'intérieur de la balise ouvrante <code>&lt;a&gt;</code>&nbsp;:</p>
 	 <div style="text-align:center">
 	<code>
 	  &lt;a href="https://www.fr.wikipedia.org"&gt;Wiki&lt;/a&gt;
 	</code>
 	</div>
-	<div class=Cours>
-      <p>L'élément <code>&lt;a&gt;</code> (pour ancre ou <i>anchor</i> en anglais) permet de créer un lien hypertexte. La balise ouvrante <code>&lt;a&gt;</code> doit comporter <b>un attribut href</b> (pour&nbsp;«&nbsp;<i>hypertexte reference»</i>), <b>indiquant la destination du lien</b>.</p>
-    </div>
+	
 	<li>Ouvrir le fichier&nbsp;«&nbsp;7-animaux.html&nbsp;» avec un navigateur. Que se passe-t-il si on clique sur&nbsp;«&nbsp;dauphins&nbsp;»&nbsp;?</li>
 	<div><textarea class=Reponse rows="2"></textarea></div>
 	<li>Comment faut-il modifier le fichier&nbsp;«&nbsp;dauphin.html&nbsp;» pour pouvoir revenir à la page principale&nbsp;?</li>
@@ -208,7 +209,7 @@
 	<h1>Images</h1>
 	
     <div class=Cours>
-	  <p>L'élément <code>&lt;imb&gt;</code> (pour image) permet d'afficher une image. La balise <code>&lt;imb&gt;</code> est une balise <b>orpheline</b> (pas de balise fermante). Elle doit comporter deux attributs&nbsp;:</p>
+	  <p>L'élément <code>&lt;img&gt;</code> (pour image) permet d'afficher une image. La balise <code>&lt;img&gt;</code> est une balise <b>orpheline</b> (pas de balise fermante). Elle doit comporter deux attributs&nbsp;:</p>
 	  <ul>
 	    <li>un <b>attribut src</b> (pour source), &nbsp;indiquant le <b>fichier de l'image</b>.</li>
 		<li>un <b>attribut alt</b> (pour alternatif), &nbsp;indiquant un <b>texte alternatif</b> si l'image ne s'affiche pas.</li>
