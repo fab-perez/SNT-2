@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+  <head>
+    <meta charset="UTF-8">
+	<meta name="author" content="Fabrice Perez">
+    <title>[Web](4) Popularité d'une page Web</title>
+	
+    <link rel="stylesheet" type="text/css" href="../style.css">
+  </head>
+  
+  <body lang=FR link=blue vlink=purple>
+    <div style='border-bottom:solid #4F81BD 1.0pt'>
+      <p class=MsoTitle>Le Web</p>
+    </div>
+    <p class=MsoSubtitle>Popularité d'une page Web</p> 
+
+
+
+    <ol>
+	<h1>Navigateurs et moteurs de recheche</h1>
+	<p>Il ne faut pas confondre les <b>navigateurs Web qui sont des applications installés sur un ordinateur</b>, une tablette ou un smartphone permettant de consulter le web avec les <b>moteurs de recherche qui sont des applications web</b> permettant de trouver des ressources (pages web, des articles de forums, des images, des vidéos, des fichiers, etc.).</p>
+	<li>Quels sont les moteurs de recherche parmi les applications proposées ci-dessous ?</li>
+	<img style="align-content: center; height:5em;" src="images/4-navigateurs_et_moteurs_recherche.png" alt="Des icones mélangées de plusieurs navigateurs et moteurs de recheche connus">
+
+
+	<h1>Moteurs de recherche</h1>
+	<p>Lorsqu’on fait une requête sur un moteur de recherche, celui-ci affiche une liste de pages correspondantes, en présentant les pages les plus populaires en premier. Mais il existe une énorme quantité d'informations sur Internet (plusieurs milliards de pages), et ces informations sont pour la plupart renouvelées quotidiennement. Alors comment fait ce moteur de recherche pour déterminer les pages les plus populaires&nbsp;?</p>
+	<img style="float:left; height:7em;" src="images/4-web-crawler.png" alt="Un robot d'indexation sur une page web">
+
+
+	<p>Un moteur de recherche utilise des <b>robots d'indexation</b> (en anglais <b><i>web crawlers</i></b> ou <b><i>web spiders</b></i>) qui explorent automatiquement le web pour collecter les ressources (pages web, images, vidéos, documents, etc.) afin de les indexer dans de <b>gigantesques bases de données</b>. </p>
+	<p>Le moteur de recherche consulte ensuite ses bases de données pour chacun des mots cherchés par ses utilisateurs et affiche les liens vers des pages classées dans un ordre de pertinence, selon ses propres critères, tels que le pourcentage de mots correspondant à la recherche, le nombre de pages pointant vers les pages, le nombre d'occurrences de chacun des mots clés dans la page, etc. <b>Les résultats obtenus sont différents pour chaque moteur de recherche</b>.</p>
+	
+	<h1>Web, Deep Web et Dark Web</h1>
+	<img style="float:left; height:5em;" src="images/4-web-deepweb-darkweb.png" alt="un iceberg dont la partie émergée et le web et les parties immergées sont le deepweb et darkweb">
+
+	<p>Seulement <b>moins de 5 % des pages web sont indexées par des moteurs de recherche</b>. Le reste ne l’est pas, par exemple les données médicales, les comptes bancaires, les boites mail, les pages Netflix, etc., c’est le <b>Deep Web</b>. Une partie de ces pages du Deep Web n’est même pas accessible par un navigateur classique comme Chrome, Mozilla ou Edge, c’est le <b>Dark Web</b>, où l’on trouve beaucoup d’activités illégales comme des trafics d’armes ou de drogue, il est dangereux de s’y aventurer. </p>
+	
+	
+
+	
+	<h1>PageRank de Google</h1>
+	<img style="float:right; height:7em;" src="images/4-pagerank.png" alt="Des pages web resprésentées par des smiley avec des liens entre elles">
+
+	<p>Dans cette activité, nous allons étudier une version simplifiée de <b>l’algorithme PageRank</b>, inventé par Sergey Brin et Larry Page, les fondateurs de <b>Google</b>.</p>
+	<p>PageRank n’est qu’un indicateur parmi d’autres dans l’algorithme qui permet à Google de classer les pages du web dans les résultats de recherche. Son principe général est simple : La plupart des pages web présentent des liens hypertextes vers d’autres pages : si une page est souvent référencée par d’autres pages, alors cette page est plus importante, et sera mieux classée. PageRank attribue à chaque page une valeur proportionnelle au nombre de fois qu'il passe sur cette page en parcourant le Web aléatoirement en suivant les liens de chaque page.</p>
+
+
+	<!-- fin page 1 -->
+	<div style="break-after:page"></div>
+	<!-- début page 2 -->
+
+	
+	<h1>Simulation « à la main »</h1>
+	<p>Le <b>graphe</b> ci-contre représente trois pages web A, B et C et les liens entre elles par des cercles et des flèches. Le but est de déterminer la fréquence de visite de chaque page en parcourant ce  graphe de façon aléatoire.</p>
+	<img style="float:right; height:12em;" src="images/4-graphe-1.png" alt="Pages A, B et C avec nombres aleatoires">
+
+	<li>En Python, la fonction randint(a, b) du module random génère un nombre entier aléatoire compris entre a et b (inclus). Copier le programme suivant qui génère le chiffre 0 ou 1 aléatoirement (comme si on jouait à pile ou face)&nbsp;:</li>
+	<code>
+	from random import randint<br>
+	alea = randint(0,1)<br>
+	print(alea)<br>
+	</code>
+	 
+
+	
+	<p>On part de la page A représentée sur le graphe, puis on se déplace de page en page sur le graphe en respectant les règles suivantes&nbsp;:</p>
+
+	<ul>
+    <li>On génère un nombre aléatoire 0 ou 1 avec le programme précédent. </li>
+    <li>Selon le résultat obtenu on se rend sur la page suivante par le lien correspondant.</li>
+    <li>On marque un trait dans la tableau ci-dessous correspondant à la nouvelle page  visitée.</li>
+    <li>On se déplace à nouveau.</li>
+	</ul>
+
+	<li>Réaliser cette expérience en la répétant 30 fois et  en marquant d'un trait chaque passage dans les page A, B et C, puis calculer le nombre de visites et les fréquences (nombre de visites d'une page divisé par 30) de ces trois pages.</li>
+	
+	<table align= center border=1 cellspacing=0 cellpadding=1 >
+	<tr>
+	<td><p><b></b></p></td>
+	<td align= center width=150><p><b>A</b></p></td>
+	<td align= center width=150><p><b>B</b></p></td>
+	<td align= center width=150><p><b>C</b></p></td>
+	</tr>
+	
+	<tr>
+	<td><p><b>Visites</b> (1 trait par visite)</p></td>
+	<td><p></p></td>
+	<td><p></p></td>
+	<td><p></p></td>
+	</tr>
+
+	<tr>
+	<td><p><b>Nombres de visites</b></p></td>
+	<td><p></p></td>
+	<td><p></p></td>
+	<td><p></p></td>
+	</tr>
+
+	<tr>
+	<td><p><b>Fréquences</b> (nb visites/30)</p></td>
+	<td><p></p></td>
+	<td><p></p></td>
+	<td><p></p></td>
+	</tr>
+	</table>
+
+
+	<li>Dans quel ordre apparaîtraient ces trois pages sur un moteur de recherche utilisant PageRank&nbsp;?</li>
+	<div><textarea class=Reponse rows="2"></textarea></div>
+
+
+	<h1>Simulation au départ d'une seule page</h1>
+	<p>On va maintenant programmer cette première simulation en partant de A.</p>
+	<li>Créer un nouveau programme Python appelé pagerank.py puis saisir et compléter le code suivant&nbsp;:</li>
+	<code>
+	from random import randint<br>
+	<br>
+	page = "A"<br>
+	nA = 0<br>
+	nB = 0<br>
+	nC = 0<br>
+	<br>
+	alea = randint(0, 1)<br>
+	if alea == 0:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;page_suivante = "B"<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;nB = nB +1<br>
+	else:<br>
+    &nbsp;# compléter la suite du programme ci-dessous quand alea est égal à 1<br>
+	<div><textarea class=Reponse rows="4"></textarea></div>
+
+
+
+	print("A: ", nA)<br>
+	print("B: ", nB)<br>
+	print("C: ", nC)<br>
+	<br>
+	</code>
+	<li>Tester votre programme plusieurs fois et observer que l'on passe bien aléatoirement sur la page B ou C.</li>
+		
+	<!-- fin page 2 -->
+	<div style="break-after:page"></div>
+	<!-- début page 3 -->
+
+	<h1>Simulation au départ de plusieurs pages</h1>
+	<li>Modifier le programme précédent pour que l'utilisateur commence l'algorithme à la page de son choix en complétant le programme suivant. L’algorithme détermine sur quelle page suivante se rendre selon le graphe ci-dessous. On sépare le programme en trois cas distincts si la page de départ est A, B ou C. </li>
+	<p>Noter les lignes commençants par le signe # pour signifier un commentaire ignoré par Python.</p>
+	<img style="float:right; height:12em;" src="images/4-graphe-2.png" alt="Pages A, B et C avec nombres aleatoires">
+
+	<code>
+	from random import randint<br>
+	<br>
+	page = input("Entrer la page de départ (A/B/C)")<br>
+	nA = 0<br>
+	nB = 0<br>
+	nC = 0<br>
+	<br>
+	alea = randint(0, 1)<br>
+	if page == "A":<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;if alea == 0:<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;page_suivante = "B"<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nB = nB +1<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;else:<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;page_suivante = "C"<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nC = nC + 1<br>
+	if page == "B":<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;# completer ci dessous quand la page est "B"<br>
+	<div><textarea class=Reponse rows="4"></textarea></div>	
+	
+	if page == "C":<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;# completer ci dessous quand la page est "C"<br>
+	<div><textarea class=Reponse rows="4"></textarea></div>	
+	
+	print("A: ", nA)<br>
+	print("B: ", nB)<br>
+	print("C: ", nC)<br>
+	<br>
+	</code>
+
+	<li>Tester votre programme plusieurs fois et observer que l'on passe bien aléatoirement sur toutes les pages puis enregistrer ce programme sous le nom <code>pagerank.py</code></li>
+
+	<!-- fin page 3 -->
+	<div style="break-after:page"></div>
+	<!-- début page 4 -->
+
+	<h1>Simulation un grand nombre de fois</h1>
+	<li>On va maintenant répéter le même algorithme 10 000 fois avec une boucle for i in range(10000).</li>
+	<p>Modifier votre programme précédent de la façon suivante (en prenant soin à l'indentation)&nbsp;:</p>
+	<code>
+	from random import randint<br>
+	<br>
+	page = input("Entrer la page de départ (A/B/C)")<br>
+	nA = 0<br>
+	nB = 0<br>
+	nC = 0<br>
+	<br>
+
+	</code>
+	<div style="width: 300px;float:right">
+	<p>Attention à l’indentation ! Il faut garder le code du programme précédent en indentant vers la droite la partie qui doit être répétée dans la boucle  for i in range(10 000)</p>
+	</div>
+	<code>
+	# répéter 10 000 fois<br>
+	for i in range(10000):<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;alea = randint(0, 1)<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;if page == "A":<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if alea == 0:<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;page_suivante = "B"<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# continuer avec le code du programme précédent<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;if page == "B":<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# programme précédent<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;if page == "C":<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# programme précédent<br>
+	<br>
+	
+	</code>
+	<div style="width: 300px;float:right">
+	<p><----------  Penser à remplacer la valeur de page par celle de page_suivante à l'intérieur de la boucle</p>
+	</div>
+	<code>
+	&nbsp;&nbsp;&nbsp;&nbsp;page = page_suivante
+	&nbsp;&nbsp;&nbsp;&nbsp;<br>
+	print("A: ", nA)<br>
+	print("B: ", nB)<br>
+	print("C: ", nC)<br>
+	<br>
+	</code>
+
+
+	<p>Compléter les résultats obtenus&nbsp;:</p>
+
+
+	<table align= center border=1 cellspacing=0 cellpadding=1 >
+	<tr>
+	<td><p><b></b></p></td>
+	<td align= center width=150><p><b>A</b></p></td>
+	<td align= center width=150><p><b>B</b></p></td>
+	<td align= center width=150><p><b>C</b></p></td>
+	</tr>
+	
+	<tr>
+	<td><p><b>Visites</b></p></td>
+	<td><p></p></td>
+	<td><p></p></td>
+	<td><p></p></td>
+	</tr>
+
+	<tr>
+	<td><p><b>Nombres de visites</b></p></td>
+	<td><p></p></td>
+	<td><p></p></td>
+	<td><p></p></td>
+	</tr>
+
+	<tr>
+	<td><p><b>Fréquences</b> (nb visites/30)</p></td>
+	<td><p></p></td>
+	<td><p></p></td>
+	<td><p></p></td>
+	</tr>
+	</table>
+	<br>
+	<li>Dans quel ordre apparaîtraient ces trois pages sur un moteur de recherche&nbsp;?</li>
+	<li>Enregistrer ce nouveau programme.</li>
+	
+	<!-- fin page 4 -->
+	<div style="break-after:page"></div>
+	<!-- début page 5 -->
+	
+	<h1>Un premier cas particulier</h1>
+	<img style="float:right; height:12em;" src="images/4-graphe-3.png" alt="Pages A, B et C avec nombres aleatoires">
+
+	<p>Voici un nouveau graphe qui contient cette fois quatre pages : A, B, C et D.</p>
+	<li>Observer le nouveau graphe représentant les liens entre les pages A, B, C et D et identifier quel est le problème.</li>
+	<div><textarea class=Reponse rows="2"></textarea></div>	
+
+	<p>Pour pallier à ce problème, on décide que si la page visitée ne redirige pas vers une autre page, alors on choisit au hasard la page suivante parmi les autres.</p>
+	<li>Adapter le programme pour calculer la fréquence des pages A, B, C et D. Tester ensuite l’algorithme avec 10000 changements de page.</li>
+
+
+	<table align= center border=1 cellspacing=0 cellpadding=1 >
+	<tr>
+	<td><p><b></b></p></td>
+	<td align= center width=150><p><b>A</b></p></td>
+	<td align= center width=150><p><b>B</b></p></td>
+	<td align= center width=150><p><b>C</b></p></td>
+	<td align= center width=150><p><b>D</b></p></td>
+	</tr>
+
+	<tr>
+	<td><p><b>Fréquence</b></p></td>
+	<td><p></p></td>
+	<td><p></p></td>
+	<td><p></p></td>
+	</tr>
+	</table>
+
+	<li>Puis classer A, B, C et D par popularité.</li>
+	<div><textarea class=Reponse rows="2"></textarea></div>	
+
+	<li>Décrire les modifications faites au programme.</li>
+	<div><textarea class=Reponse rows="20"></textarea></div>	
+
+	<li> Enregistrer ce programme sous le nom <code>pagerank1.py</code></li>
+	
+
+	<!-- fin page 5 -->
+	<div style="break-after:page"></div>
+	<!-- début page 6 -->
+
+	<h1>Un deuxième cas particulier</h1>
+	<img style="float:right; height:12em;" src="images/4-graphe-4.png" alt="Pages A, B et C avec nombres aleatoires">
+
+	<p>Voici un nouveau graphe.</p>
+	<li>Observer le nouveau graphe représentant les liens entre les pages A, B, C et D et identifier quel est le problème.</li>
+	<div><textarea class=Reponse rows="2"></textarea></div>	
+
+	<p>Pour pallier à ce problème on décide que, à chaque page visitée quelle qu’elle soit, on choisit une fois sur vingt la page suivante au hasard parmi toutes les pages.</p>
+	<li>Adapter le programme pour calculer la fréquence des pages A, B, C et D. Tester ensuite l’algorithme avec 10000 changements de page.</li>
+
+	<table align= center border=1 cellspacing=0 cellpadding=1 >
+	<tr>
+	<td><p><b></b></p></td>
+	<td align= center width=150><p><b>A</b></p></td>
+	<td align= center width=150><p><b>B</b></p></td>
+	<td align= center width=150><p><b>C</b></p></td>
+	<td align= center width=150><p><b>D</b></p></td>
+	</tr>
+
+	<tr>
+	<td><p><b>Fréquence</b></p></td>
+	<td><p></p></td>
+	<td><p></p></td>
+	<td><p></p></td>
+	</tr>
+	</table>
+
+
+	<li>Puis classer A, B, C et D par popularité.</li>
+	<div><textarea class=Reponse rows="2"></textarea></div>	
+
+	<li>Décrire les modifications faites au programme.</li>
+	<div><textarea class=Reponse rows="20"></textarea></div>	
+
+	<li>Enregistrer ce programme sous le nom pagerank2.py</li>
+
+
+  </ol>	
+  </body>
+</html>
