@@ -25,7 +25,7 @@
 
 
 	<h1>Moteurs de recherche</h1>
-	<p>Lorsqu’on fait une requête sur un moteur de recherche, celui-ci affiche une liste de pages correspondantes, en présentant les pages les plus populaires en premier. Mais il existe une énorme quantité d'informations sur Internet (plusieurs milliards de pages), et ces informations sont pour la plupart renouvelées quotidiennement. Alors comment fait ce moteur de recherche pour déterminer les pages les plus populaires&nbsp;?</p>
+	<p>Lorsqu'on fait une requête sur un moteur de recherche, celui-ci affiche une liste de pages correspondantes, en présentant les pages les plus populaires en premier. Mais il existe une énorme quantité d'informations sur Internet (plusieurs milliards de pages), et ces informations sont pour la plupart renouvelées quotidiennement. Alors comment fait ce moteur de recherche pour déterminer les pages les plus populaires&nbsp;?</p>
 	<img style="float:left; height:7em;" src="images/4-web-crawler.png" alt="Un robot d'indexation sur une page web">
 
 
@@ -35,7 +35,7 @@
 	<h1>Web, Deep Web et Dark Web</h1>
 	<img style="float:left; height:5em;" src="images/4-web-deepweb-darkweb.png" alt="un iceberg dont la partie émergée et le web et les parties immergées sont le deepweb et darkweb">
 
-	<p>Seulement <b>moins de 5 % des pages web sont indexées par des moteurs de recherche</b>. Le reste ne l’est pas, par exemple les données médicales, les comptes bancaires, les boites mail, les pages Netflix, etc., c’est le <b>Deep Web</b>. Une partie de ces pages du Deep Web n’est même pas accessible par un navigateur classique comme Chrome, Mozilla ou Edge, c’est le <b>Dark Web</b>, où l’on trouve beaucoup d’activités illégales comme des trafics d’armes ou de drogue, il est dangereux de s’y aventurer. </p>
+	<p>Seulement <b>moins de 5 % des pages web sont indexées par des moteurs de recherche</b>. Le reste ne l'est pas, par exemple les données médicales, les comptes bancaires, les boites mail, les pages Netflix, etc., c'est le <b>Deep Web</b>. Une partie de ces pages du Deep Web n'est même pas accessible par un navigateur classique comme Chrome, Mozilla ou Edge, c'est le <b>Dark Web</b>, où l'on trouve beaucoup d'activités illégales comme des trafics d'armes ou de drogue, il est dangereux de s'y aventurer. </p>
 	
 	
 
@@ -43,8 +43,8 @@
 	<h1>PageRank de Google</h1>
 	<img style="float:right; height:7em;" src="images/4-pagerank.png" alt="Des pages web resprésentées par des smiley avec des liens entre elles">
 
-	<p>Dans cette activité, nous allons étudier une version simplifiée de <b>l’algorithme PageRank</b>, inventé par Sergey Brin et Larry Page, les fondateurs de <b>Google</b>.</p>
-	<p>PageRank n’est qu’un indicateur parmi d’autres dans l’algorithme qui permet à Google de classer les pages du web dans les résultats de recherche. Son principe général est simple : La plupart des pages web présentent des liens hypertextes vers d’autres pages : si une page est souvent référencée par d’autres pages, alors cette page est plus importante, et sera mieux classée. PageRank attribue à chaque page une valeur proportionnelle au nombre de fois qu'il passe sur cette page en parcourant le Web aléatoirement en suivant les liens de chaque page.</p>
+	<p>Dans cette activité, nous allons étudier une version simplifiée de <b>l'algorithme PageRank</b>, inventé par Sergey Brin et Larry Page, les fondateurs de <b>Google</b>.</p>
+	<p>PageRank n'est qu'un indicateur parmi d'autres dans l'algorithme qui permet à Google de classer les pages du web dans les résultats de recherche. Son principe général est simple : La plupart des pages web présentent des liens hypertextes vers d'autres pages : si une page est souvent référencée par d'autres pages, alors cette page est plus importante, et sera mieux classée. PageRank attribue à chaque page une valeur proportionnelle au nombre de fois qu'il passe sur cette page en parcourant le Web aléatoirement en suivant les liens de chaque page.</p>
 
 
 	<!-- fin page 1 -->
@@ -144,7 +144,7 @@
 	<!-- début page 3 -->
 
 	<h1>Simulation au départ de plusieurs pages</h1>
-	<li>Modifier le programme précédent pour que l'utilisateur commence l'algorithme à la page de son choix en complétant le programme suivant. L’algorithme détermine sur quelle page suivante se rendre selon le graphe ci-dessous. On sépare le programme en trois cas distincts si la page de départ est A, B ou C. </li>
+	<li>Modifier le programme précédent pour que l'utilisateur commence l'algorithme à la page de son choix en complétant le programme suivant. L'algorithme détermine sur quelle page suivante se rendre selon le graphe ci-dessous. On sépare le programme en trois cas distincts si la page de départ est A, B ou C. </li>
 	<p>Noter les lignes commençants par le signe # pour signifier un commentaire ignoré par Python.</p>
 	<img style="float:right; height:12em;" src="images/4-graphe-2.png" alt="Pages A, B et C avec nombres aleatoires">
 
@@ -198,7 +198,7 @@
 
 	</code>
 	<div style="width: 300px;float:right">
-	<p>Attention à l’indentation ! Il faut garder le code du programme précédent en indentant vers la droite la partie qui doit être répétée dans la boucle  for i in range(10 000)</p>
+	<p>Attention à l'indentation ! Il faut garder le code du programme précédent en indentant vers la droite la partie qui doit être répétée dans la boucle  for i in range(10 000)</p>
 	</div>
 	<code>
 	# répéter 10 000 fois<br>
@@ -271,12 +271,12 @@
 	<h1>Un premier cas particulier</h1>
 	<img style="float:right; height:12em;" src="images/4-graphe-3.png" alt="Pages A, B et C avec nombres aleatoires">
 
-	<p>Voici un nouveau graphe qui contient cette fois quatre pages : A, B, C et D.</p>
+	<p>Voici un nouveau graphe qui contient cette fois quatre pages&nbsp;: A, B, C et D.</p>
 	<li>Observer le nouveau graphe représentant les liens entre les pages A, B, C et D et identifier quel est le problème.</li>
 	<div><textarea class=Reponse rows="2"></textarea></div>	
 
 	<p>Pour pallier à ce problème, on décide que si la page visitée ne redirige pas vers une autre page, alors on choisit au hasard la page suivante parmi les autres.</p>
-	<li>Adapter le programme pour calculer la fréquence des pages A, B, C et D. Tester ensuite l’algorithme avec 10000 changements de page.</li>
+	<li>Adapter le programme pour calculer la fréquence des pages A, B, C et D. Tester ensuite l'algorithme avec 10000 changements de page.</li>
 
 
 	<table align= center border=1 cellspacing=0 cellpadding=1 >
@@ -316,8 +316,8 @@
 	<li>Observer le nouveau graphe représentant les liens entre les pages A, B, C et D et identifier quel est le problème.</li>
 	<div><textarea class=Reponse rows="2"></textarea></div>	
 
-	<p>Pour pallier à ce problème on décide que, à chaque page visitée quelle qu’elle soit, on choisit une fois sur vingt la page suivante au hasard parmi toutes les pages.</p>
-	<li>Adapter le programme pour calculer la fréquence des pages A, B, C et D. Tester ensuite l’algorithme avec 10000 changements de page.</li>
+	<p>Pour pallier à ce problème on décide que, à chaque page visitée quelle qu'elle soit, on choisit une fois sur vingt la page suivante au hasard parmi toutes les pages.</p>
+	<li>Adapter le programme pour calculer la fréquence des pages A, B, C et D. Tester ensuite l'algorithme avec 10000 changements de page.</li>
 
 	<table align= center border=1 cellspacing=0 cellpadding=1 >
 	<tr>
