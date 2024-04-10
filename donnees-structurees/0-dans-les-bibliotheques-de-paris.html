@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+  <head>
+	<meta charset="UTF-8">
+	<meta name="author" content="Fabrice Perez">
+    <title>[Données structurées] (0) Dans les bibliothèques de Paris</title>
+	
+    <link rel="stylesheet" type="text/css" href="../style.css">
+  </head>
+  
+  <body lang=FR link=blue vlink=purple>
+    <div style='border-bottom:solid #4F81BD 1.0pt'>
+      <p class=MsoTitle>Les Données Structurées</p>
+    </div>
+    <p class=MsoSubtitle>Les titres les plus prêtés dans les bibliothèques de Paris</p> 
+
+	
+    <ol>
+	<h1>Origine des données</h1>
+	
+	<p> 
+		La Mairie de Paris a mis à disposition la liste des 1000 références de livre, DVD, jeux de société, etc.  
+		les plus empruntées au sein des bibliothèques municipales de la ville de Paris.  Les données sont librement disponibles 
+		sur le site <a href="https://www.data.gouv.fr/fr/datasets/les-titres-les-plus-pretes-dans-les-bibliotheques-de-pret-prs/ ">https://www.data.gouv.fr/</a>,
+		la plateforme de <b>données ouvertes</b> publiques de l'État français.
+	</p>
+	
+	<div class=Cours> 
+	<p>
+		Les <b>données ouvertes</b> ou <b><i>open data</i></b> sont des données numériques dont l'accès et l'usage sont laissés libres 
+		de droits aux usagers. Ces données offrent de nombreuses opportunités pour étendre le savoir humain et créer de nouveaux produits 
+		et services de qualité. 
+	</p>
+	</div>
+	
+	<p>
+		Ces données sont proposées sous trois formats de fichier différents identifiables par les extensions de noms: 
+		<ul>
+		<li>les-titres-les-plus-pretes.csv</li>
+		<li>les-titres-les-plus-pretes.json</li>
+		<li>les-titres-les-plus-pretes.xls</li>
+		</ul>
+		
+	<li>Dans un gestionnaire de fichier, cliquer sur « Extensions de noms de fichier » pour repérer les différents formats.</li>
+	
+	<img style="width=100%;" src="images/0-extension-nom-fichier.png" alt="Cliquer sur Extensions de noms de fichiers dans le gestionnaire de fichiers">
+
+	
+	<li> Copier ces 3 fichiers depuis le dossier partagé de l'école vers un dossier sur votre espace de stockage de fichiers.</li>
+	
+	<h1>Format CSV</h1>
+	
+	<p>
+	Dans cette première partie, on s’intéresse au fichier « les-titres-les-plus-pretes.csv ».
+	</p>
+	<li>Dans le répertoire où il a été copié, sélectionner le fichier par un clic-droit (sans l'ouvrir) puis sélectionner « Propriétés » dans le menu qui s'affiche. Quelles informations obtient-on&nbsp;?</li>
+	<div><textarea class=Reponse rows="2"></textarea></div>
+
+	<p>Ce sont les métadonnées du fichier.</p>
+	<div class=Cours> 
+	Les <b>métadonnées</b> (littéralement des données décrivant d'autres données) d'un fichier, ou <b>données EXIF</b> (<i>EXchangeable Image file Format</i>) 
+	contiennent des <b>informations sur ce fichier</b>, par exemple le nom de son auteur et la date à laquelle il a été enregistrée, ou les coordonnées GPS du lieu où a été prise une photo, etc.
+	</div>
+	
+	
+	
+	<!-- fin page 1 -->
+	<div style="break-after:page"></div>
+	<!-- début page 2 -->
+
+	<li>Quel est le type de ce fichier indiqué par les métadonnées du fichier&nbsp;?</li>
+	<div><textarea class=Reponse rows="1"></textarea></div>
+	<li>Ouvrir le fichier « les-titres-les-plus-pretes.csv »à l’aide d'un éditeur de texte (notepad, notepad++, Wordpad, etc.).
+	Le fichier est il lisible dans l'éditeur de texte&nbsp;?</li>
+	<div><textarea class=Reponse rows="1"></textarea></div>
+	<p>Quel caractère sépare les données les unes des autres&nbsp;?<p>
+	<div><textarea class=Reponse rows="2"></textarea></div>
+	<p>La première ligne contient les descripteurs des données. Quels sont ils&nbsp;?<p>
+	<div><textarea class=Reponse rows="3"></textarea></div>
+
+	<div class=Cours> 
+
+	<p>On peut stocker des données dans un fichier <b>csv</b> (pour <b><i>Comma Separated Values</i></b>) :</p>
+	<ul>
+    <li>C'est un format de fichier <b>texte</b>, <b>ouvert</b> qui peut être créé, lu et modifié par tous les logiciels.</li>
+    <li>Les données sont séparées par des <b>virgules</b>, des <b>points virgules</b>, ou encore des tabulations, « | », etc.</li>
+    <li>La première ligne contient (souvent) des informations qui caractérisent les données : les <b>descripteurs</b>.</li>
+    <li>Chaque ligne contient les données sur un objet ou une personne : une <b>entrée</b>.</li>
+	</ul>
+	</div>
+	
+	
+	<h1>Format JSON</h1>
+	<p>Dans cette partie, on s’intéresse au fichier « les-titres-les-plus-pretes.json».</p>
+	<li>Quel est le type de ce fichier indiqué par les métadonnées du fichier ?
+	<div><textarea class=Reponse rows="1"></textarea></div>
+
+
+	<li>Ouvrir le fichier « les-titres-les-plus-pretes.json»à l’aide d'un éditeur de texte (notepad, notepad++, Wordpad, etc.). Le fichier est il lisible dans l'éditeur de texte&nbsp;?</li>
+	<div><textarea class=Reponse rows="1"></textarea></div>
+	
+	<p>
+	Observer comment les données sont groupées sous forme de blocs délimités entre accolades.  Ici, chaque données est représentée 
+	par une paire  « clé »  / « valeur ».  
+	</p>
+	
+	<li>Ce fichier comprend plus d'information que le fichier csv. Quels sont les clés des informations supplémentaires&nbsp;?</li>
+	<div><textarea class=Reponse rows="2"></textarea></div>
+	
+	<li>Associés à la clé "fields" on retrouve les données sur les références empruntées du fichier csv. Les descripteurs sont-ils les mêmes&nbsp;?</li>
+	<div><textarea class=Reponse rows="1"></textarea></div>
+	
+	<div class=Cours> 
+	<p>On peut stocker des données dans un fichier <b>json</b> (pour <b>JavaScript Object Notation</b>) :</p>
+	<ul>
+    <li>C'est un format de fichier <b>texte</b>, <b>ouvert</b> qui peut être créé, lu et modifié par tous les logiciels.</li>
+    <li>Les données sont des blocs de paires « clés »  / « valeur.</li>
+    <li>Bien qu’utilisant une notation JavaScript, JSON est indépendant du langage de programmation.</li>
+	</ul>
+	</div> 
+		
+	<li>En faisant une recherche sur le texte, peut-on trouver quel est l'auteur du livre 'Idylles'&nbsp;?</li>
+	<div><textarea class=Reponse rows="1"></textarea></div>
+
+	
+	<!-- fin page 2 -->
+	<div style="break-after:page"></div>
+	<!-- début page 3 -->
+	
+	<h1>Fichier XLS</h1>
+	
+	<p>Dans cette partie, on s’intéresse au fichier « les-titres-les-plus-pretes.xls».</p>
+	
+	<li>Quel est le type de ce fichier indiqué dans les métadonnées du fichier&nbsp;?</li>
+	<div><textarea class=Reponse rows="2"></textarea></div>
+
+
+	<li>Ouvrir le fichier « les-titres-les-plus-pretes.xls»à l’aide d'un éditeur de texte (notepad, notepad++, Wordpad, etc.).
+	Le fichier est il lisible dans l'éditeur de texte&nbsp;?</li>
+	<div><textarea class=Reponse rows="2"></textarea></div>
+
+	<p>Les fichiers xls ou ods sont des fichiers destinés à être lus par des tableurs.</p>
+	
+	<div class=Cours>
+	<p>Un <b>tableur</b> est un logiciel capable de manipuler des données présentées dans des <b>feuilles de calcul</b> avec de nombreuses possibilités : 
+	faire des recherches sur des données, des calculs, des analyses statistiques, représenter  des données sous formes graphiques, etc.</p>
+	<p>De nombreux tableurs existent, parmi mes plus connus on trouve :</p>
+	<ul>
+    <li><b>Calc</b>, le tableur de la suite bureautique <b>LibreOffice</b> (anciennement <b>OpenOffice</b>) est un logiciel  <b>libre</b> et <b>gratuit</b> ;</li>
+    <li><b>Excel</b>, le tableur de la suite bureautique Office de <b>Microsoft</b>  est un logiciel <b>propriétaire</b> et <b>payant</b>.</li>
+	</ul>
+	<p>
+	Un <b>logiciel propriétaire</b>, par opposition à un <b>logiciel libre</b> ne permet pas l'étude ou la modification de son code source ni la distribution 
+	de copies. La plupart des logiciels propriétaires sont <b>payants</b> et la plupart des logiciels libres sont <b>gratuits</b>, mais ce n'est pas toujours le cas.
+	</p>
+	<p>
+	Un fichier destiné à être lu par un tableur s'appelle un <b>classeur</b>. Par défaut, <b>Calc</b> utilise des fichiers enregistrés au format <b>.ODS</b>, 
+	alors qu'<b>Excel</b> utilise le format <b>.XLS</b>. XLS est un format <b>fermé</b>, propres à Microsoft alors qu’ODS est un format ouvert, mais les deux tableurs peuvent lire les deux formats.
+	</p>
+	</div>
+	
+	
+	<li>Ouvrir le fichier « les-titres-les-plus-pretes.xls » dans le tableur de votre choix, Calc ou Excel.</li>
+	
+	<div class=Cours>
+	<p>
+	Une feuille est divisée en <b>lignes</b> et <b>colonnes</b>. Les colonnes sont numérotées à l'aide de lettre (A, B, C), et les lignes à l'aide de chiffres 
+	(1, 2, 3). A l'intersection des lignes et des colonnes on trouve des cases appelées <b>cellules</b>. 
+	</p>
+	<img style="float:right; height:15em;" src="images/0-feuille-de-calcul.png" alt="Exemple de feuille de calcul avec la cellule B2">
+
+	<p>
+	Chaque cellule a une adresse que l'on appelle référence. Par exemple la cellule en ligne 2 et colonne B  a pour référence "B2" (mais pas "2B" !).
+	</p>
+
+
+
+	<p>
+	A l'intérieur d'un classeur on trouve souvent plusieurs <b>feuilles de calcul</b>. On passe de feuille en feuille en cliquant sur 
+	les onglets en bas des feuilles. 
+	</p>
+	<p>Sur chaque onglet, il y a le nom de la feuille ("Feuil 1" Feuil 2"...)</p>
+
+
+	</div>
+
+	<!-- fin page 3 -->
+	<div style="break-after:page"></div>
+	<!-- début page 4 -->
+	
+	
+	
+	<h1>Trier les données</h1>
+	
+	<p>
+	Quand on ouvre le fichier, les références de livres, DVD, jeux de société, etc. ne sont pas triées. Il faut les trier par leur rang, en colonne A.  
+	</p>
+	
+	<li>Sélectionner par un cliqué/glissé à la souris l'ensemble des colonnes A à I; elles apparaissent sur un fond plus foncé.</li>
+	<img style="" src="images/0-trier.png" alt="Cliqué/glissé pour séléctionner les données à trier">
+
+	
+    <ul>
+	<li>Si vous utilisez  Calc, sélectionner le menu Données > Trier puis choisir pour Clé de tri 1 : rang</li>
+	<img style="" src="images/0-trier-calc.png" alt="Trier dans Calc">
+
+	<li>Si vous utilisez  Excel, cliquer sur l'icône <span> <img " src="images/0-trier-excel-bouton-trier.png" alt="bouton Trier dans Excel"></span>                  dans le menu Données puis choisir  Trier par rang.</li>
+	<img style="" src="images/0-trier-calc.png" alt="Trier dans Excel">
+
+	</ul>
+
+	<!-- fin page 4 -->
+	<div style="break-after:page"></div>
+	<!-- début page 5 -->
+	
+	<li>Quel est le titre de la référence la plus empruntée dans les bibliothèques (augmenter la taille de la colonne D)&nbsp;?</li>
+	<div><textarea class=Reponse rows="1"></textarea></div>
+
+	<p>Et celui de la moins empruntée&nbsp;?</p>
+	<div><textarea class=Reponse rows="1"></textarea></div>
+
+	<li>
+	On cherche maintenant les titres des références qui ont le plus et le moins d'exemplaires disponibles dans les bibliothèques.
+	Trier les données par leur nombre_d_exemplaires. Quel est le titre de la référence qui a plus d'exemplaires disponibles&nbsp;?</li>
+	<div><textarea class=Reponse rows="1"></textarea></div>
+
+	<p>et les titres des références qui ont le moins d'exemplaires&nbsp;?</p>
+	<div><textarea class=Reponse rows="1"></textarea></div>
+
+
+	<h1>Filtrer les données</h1>
+	
+	<p>
+	Maintenant on ne s’intéresse uniquement qu'aux références de livres, DVD, jeux de société, etc. du type « Livre pour adulte ». 
+	Pour se faire on va utiliser un filtre.
+	</p>
+	
+	<div class=Cours>
+	<p>
+	Les <b>filtres</b> permettent de sélectionner des données selon certains critères ou certaines conditions dans des menus déroulants.
+	</p>
+	</div>
+	
+	<li>Sélectionner la première ligne du fichier qui  contient les descripteurs, elle apparaît sur un fond plus foncé.</li>
+	<img style="" src="images/0-filtrer.png" alt="Cliqué/glissé pour séléctionner les données à filter">
+
+
+	<ul>
+	<li>Si vous utilisez  Calc, sélectionner le menu Données > Autofiltre .</li>
+	<li>
+	Si vous utilisez  Excel, cliquer sur l'icône 
+	<span> <img " src="images/0-filtrer-excel-bouton-filtrer.png" alt="bouton Filtrer dans Excel"></span>
+	dans le menu Données.
+	</li>
+	</ul>
+	
+	<li>
+	Cliquer sur le filtre associé au type_de_documnt en cellule B1 et sélectionner uniquement « Livre pour adulte » qui est la catégorie 
+	qui nous intéresse (de-cliquer  d'abord «Tout ou « Sélectionner tout »» puis cliquer « Livre pour adulte »). Uniquement les références de 
+	Livre pour adulte apparaissent maintenant.
+	</li>
+	
+	<li>Quel est le titre de la référence la plus empruntée parmi les livres pour adultes&nbsp;?</li>
+	<div><textarea class=Reponse rows="1"></textarea></div>
+
+	<p>Et celui de la moins empruntée&nbsp;? </p>
+	<div><textarea class=Reponse rows="1"></textarea></div>
+
+	<li>Quel est le titre de la référence qui a plus d'exemplaires disponibles parmi les livres pour adultes&nbsp;?</li>
+	<div><textarea class=Reponse rows="1"></textarea></div>
+
+	<p>et le titre de la référence qui a le moins d'exemplaires&nbsp;?</p>
+	<div><textarea class=Reponse rows="1"></textarea></div>
+
+	<li>Filtrer maintenant les titres du type « Bande dessinée jeunesse » dont l'auteur est vide. Combien en trouve-t-on&nbsp;?</li>
+	<div><textarea class=Reponse rows="2"></textarea></div>
+
+	<!-- fin page 5 -->
+	<div style="break-after:page"></div>
+	<!-- début page 6 -->
+	
+	<h1>Calculer sur les données</h1>
+	
+	<p>Le tableur permet de faire des calculs sur les données numériques en utilisant des formules. </p>
+	
+	<div class=Cours>
+	<p>
+	<img style="float:right; height:4em;" src="images/0-calculer.png" alt="Zone de saisie de formule pour calculer">
+
+	La saisie d'une <b>formule</b> se fait en sélectionnant une cellule puis en utilisant la barre de formules. 
+	Pour entrer une formule il suffit de commencer la saisie par le signe d'égalité (=) puis d'entrer les <b>références</b> des cellules à utiliser 
+	et éventuellement des opérateurs et/ou des fonctions.
+	</p>
+	</div>
+	
+	<p>
+	Certains titres sont souvent empruntés alors qu'ils n'ont que peu d'exemplaires disponibles. Il faut sans doute en acheter plus 
+	d'exemplaires. Mais quels sont ces titres ? On va ajouter une colonne pour afficher le nombre de prêt divisé par le nombre d'exemplaires 
+	pour chaque référence de livres, DVD, jeux de société, etc..
+	</p>
+	
+	<li>Supprimer le filtre en reprenant les mêmes instructions qu’en 17: Sélectionner la première ligne du fichier. </li>
+	<ul>
+     <li> Si vous utilisez  Calc, sélectionner le menu Données > Autofiltre .</li>
+     <li> 
+	 Si vous utilisez  Excel, cliquer sur l'icône 
+	<span> <img " src="images/0-filtrer-excel-bouton-filtrer.png" alt="bouton Filtrer dans Excel"></span>
+	 dans le menu Données.
+	 </li>
+	</ul>
+	
+	<li>Ajouter un nouveau descripteur «prets_par_exemp» en cellule  J1 et la formule suivante en cellule J2 :</li>
+	<code>
+	= C2 / I2
+	</code>
+	<p>
+	Copier cette formule vers le bas pour renseigner le nombre de prêt divisé par le nombre d'exemplaires pour toutes les références. 
+	Observer comment les numéros de ligne sont mis à jour dans chaque ligne.
+	</p>
+	
+	<li>Quelle est le titre de référence à acheter en priorité, c'est-à-dire celui qui est le plus prêté par exemplaire&nbsp;?</li>
+	<div><textarea class=Reponse rows="2"></textarea></div>
+
+
+	<li>Quelle est la bande dessinée jeunesse à acheter en priorité&nbsp;?</li>
+	<div><textarea class=Reponse rows="2"></textarea></div>
+
+
+	<p>
+	De la même façon, certains titres sont souvent empruntés alors qu'ils ne sont disponibles que dans très peu de localisations. 
+	Il faut aussi en acheter plus d'exemplaire.
+	</p>
+	
+	<li>Ajouter un nouveau descripteur «prets_par_localisations»en cellule  K1.</li>
+	
+	<li>Quelle formule doit-on écrire en cellule K2&nbsp;?</li>
+	<div><textarea class=Reponse rows="2"></textarea></div>
+
+
+	<p>Copier cette formule vers le bas pour renseigner le nombre de prêt par localisations pour toutes les références. </p>
+	<li>Quelle est le référence à acheter en priorité, c'est-à -dire celle qui est le plus prêtée par localisations&nbsp;?</li>
+	<div><textarea class=Reponse rows="2"></textarea></div>
+
+
+	<li>Quelle est la bande dessinée jeunesse à acheter en priorité&nbsp;?</li>
+	<div><textarea class=Reponse rows="2"></textarea></div>
+
+	<!-- fin page 5 -->
+	<div style="break-after:page"></div>
+	<!-- début page 6 -->
+
+	<h1>Utiliser des macros</h1>
+	
+	<p>
+	Quand on effectue fréquemment certaines tâches, on peut utiliser une macro pour les automatiser. 
+	</p>
+	
+	<div class=Cours>
+	<p>
+	Une <b>macro</b> est un programme informatique inclus dans un classeur permettant d'automatiser certaines taches. Le langage de programmation 
+	est souvent une version du langage BASIC : <b>VBA</b> (Visual Basic Application) pour Excel ou LibreOffice Basic pour Calc.
+	</p>
+	</div>
+	
+	<p>La suite de cette activité est réalisée <u>avec Excel uniquement</u>. Si vous utilisiez Calc, ouvrez le fichier avec Excel.</p>
+	<p>Nous allons faire une macro qui permet de trier le fichier par la colonne rang. Plutôt que d'écrire la macro, nous allons l'enregistrer.</p>
+	
+	<li>Utiliser le menu Affichage puis cliquer sur Macro > Enregistrer une Macro. </li>
+	<img style="" src="images/0-macro-enregistrer.png" alt="Enregistrer une macro">
+	
+	<p>Une fenêtre s'ouvre, cliquer sur OK (sans changer les paramètres de la fenêtre).  </p>
+		<img style="" src="images/0-macro-enregistrer-2.png" alt="Enregistrer une macro">
+	
+	<p>Attention, <u>l'enregistrement a commencé</u> !</p>
+	
+	<img style="float:right; height:15em;" src="images/0-macro-enregistrer-3.png" alt="Arrêter l'enregstrement d'une macro">
+
+	<li> Trier les données par rang comme précédemment. </li>
+	<p>
+	Rappel : Sélectionner l'ensemble des colonnes A à I puis cliquer sur l'icône 
+	<span> <img " src="images/0-trier-excel-bouton-trier.png" alt="bouton Trier dans Excel"></span> 
+	dans le menu Données puis trier par rang,
+	</p>
+	<li>puis OK,</li>
+	<li> Retourner dans le menu Affichage puis cliquer sur 
+	<p>Macro > Arrêter l'enregistrement. </li>
+	
+	<p>Excel a enregistré vos manipulations et les a traduites en code VBA.</p>
+	
+		<!-- fin page 6 -->
+	<div style="break-after:page"></div>
+	<!-- début page 7 -->
+	
+	<li>
+	Pour  visualiser la macro, ouvrez l'éditeur depuis le menu Affichage Macro > Afficher les macros. La liste des macros 
+	du classeur s'affiche, avec Macro1. Cliquer sur Modifier. 
+	</li>
+	
+	<p>Ce code correspond aux manipulations enregistrées.  Analysons le code généré :</p>
+	
+	<p><code>Sub</code> et <code>End Sub</code> délimitent le début et la fin de la macro, <code>Macro1(</code>) correspond au nom de cette macro :</p>
+	<code>
+	Sub Macro1()<br>
+	<br>
+	End Sub
+	</code>
+	
+	<li>Remplacer le nom de cette macro par trier_par_rang() pour avoir quelque chose de plus parlant (le nom ne doit pas contenir d'espaces).</li>
+
+	<p>Le texte précédé d'une apostrophe (en vert) est un commentaire, il n'est pas pris en compte à l'exécution du code. On peut par exemple écrire :</p>
+	<code>
+	'<br>
+	'  trier_par_rang()  permet de trier les données en rang croissant<br>
+	'<br>
+	<br>
+	'<br>
+	</code>
+	
+	<p>observer le reste du code. Excel a enregistré les lignes de code suivantes (votre code peut-être légèrement différent si l'enregistrement s'est fait différemment) :</p>
+	<code>
+	Sub trier_par_rang()<br>
+	'<br>
+	'  trier_par_rang()  permet de trier les données en rang croissant<br>
+	'<br>
+	<br>
+	'<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;Columns("A:I").Select<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;ActiveWorkbook.Worksheets("Sheet").Sort.SortFields.Clear<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;ActiveWorkbook.Worksheets("Sheet").Sort.SortFields.Add Key:=Range("A2:A826") _<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;, SortOn:=xlSortOnValues, Order:=xlAscending, DataOption:=xlSortNormal<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;With ActiveWorkbook.Worksheets("Sheet").Sort<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.SetRange Range("A1:I826")<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.Header = xlYes<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.MatchCase = False<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.Orientation = xlTopToBottom<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.SortMethod = xlPinYin<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.Apply<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;End With<br>
+	End Sub<br>
+	</code>
+
+	<p>Sans rentrer dans le détail du code, on observe deux instructions principales permettant de réaliser ce tri :</p>
+	<ul>
+	<li> <code>Columns("A:I")</code>.Select pour selectionner les colonnes A à I</li>
+    <li> <code>ActiveWorkbook.Worksheets("Sheet").Sort...</code>   réalise le tri avec une clé de tri Range("A2:A826") sur toute la zone Range("A1:I826"). </li>
+	</ul>
+	
+	<!-- fin page 8 -->
+	<div style="break-after:page"></div>
+	<!-- début page 9 -->
+	
+	<p>On veut maintenant que cette macro s'exécute en cliquant sur un bouton.</p>
+
+	<li>Retourner sur la feuille de calcul, cliquez sur Fichier > Options > Personnaliser le ruban, cochez la case Développeur, puis cliquez sur OK.</li>
+	<img style="" src="images/0-macro-developpeur.png" alt="Utiliser le mode développeur">
+
+	<li>Un nouveau menu «Développeur » est apparu. Il contient le bouton 
+	<span> <img " src="images/0-macro-bouton-inserer.png" alt="bouton Insérer pour controle de formulaire"></span>
+	qui ouvre le  Contrôles de formulaires permettant d’insérer un bouton : 
+	</li>
+
+	<img style="" src="images/0-macro-controle-formulaire.png" alt="Insérer un bouton avec le mode développeur">
+
+	<!-- fin page 10 -->
+	<div style="break-after:page"></div>
+	<!-- début page 10 -->
+
+	<p>
+	Tracer un bouton sur la feuille de calcul. Une fenêtre s'ouvre qui permet d'affecter la macro trier_par_rang() à ce bouton.
+	Cliquer sur OK pour valider.
+	</p>
+
+	<img style="" src="images/0-macro-affecter.png" alt="Affecter uen macro au bouton">
+	
+		
+	
+	<p>On peut faire un clic-droit sur le bouton pour modifier le texte en « Trier par rang » </p>
+	<img style="float:right; height:5em;" src="images/0-macro-bouton-trier-par-rang.png" alt="Le bouton qui trie par rang">
+	
+	<p>Lorsque vous cliquerez sur le bouton, la macro sera exécutée :</p>
+
+
+	<li>Enregistrer une nouvelle macro qui permette de trier les références par nombre_d_exemplaires et l'affecter à un nouveau bouton. </li>
+	<img style="" src="images/0-macro-trier-par-rang-par nombre-exemplaires.png" alt="Feuille Excel avec les deux boutons">
+
+	<li>Tester les deux boutons et observer les tris effectués.</li>
+
+	<p>Note : Dans certaines versions d'Excel, le contrôle de formulaires pour insérer des boutons est placé au dessus de la barre de menu </p>:
+	<img style="" src="images/0-macro-bouton-inserer-au-dessus.png" alt="Menu insérer au dessus dans certaines versions d'Excel">
+      
+    </ol>	
+  </body>
+</html>

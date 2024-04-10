@@ -1,0 +1,623 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+
+  <head>
+	<meta charset="UTF-8">
+	<meta name="author" content="Fabrice Perez">
+    <title>[Données structurées] (1)Les passagers du Titanic</title>
+	
+    <link rel="stylesheet" type="text/css" href="../style.css">
+  </head>
+  
+  <body lang=FR link=blue vlink=purple>
+    <div style='border-bottom:solid #4F81BD 1.0pt'>
+      <p class=MsoTitle>Les passagers du Titanic</p>
+    </div>
+    <p class=MsoSubtitle>Les titres les plus prêtés dans les bibliothèques de Paris</p> 
+
+	
+    <ol>
+	<h1>Le RMS Titanic</h1>
+	<p>
+		Le RMS Titanic est un paquebot transatlantique britannique qui fait naufrage dans l’océan Atlantique Nord en 1912 
+		à la suite d’une collision avec un iceberg, lors de son voyage inaugural de Southampton à New York.
+		C’est l’une des plus grandes catastrophes maritimes survenues en temps de paix et la plus grande pour l’époque.
+	</p>
+	<img style="float:right; height:12em;" src="images/1-titanic.jpg" alt="RMS Titanic departing Southampton on April 10, 1912.">
+	<p>
+		Ce paquebot de la White Star Line, construit à l’initiative de Joseph Bruce Ismay en 1907, a été conçu par les 
+		architectes Alexander Montgomery Carlisle et Thomas Andrews des chantiers navals Harland & Wolff. Sa construction 
+		débute en 1909 à Belfast et se termine en 1912. C’est à l’époque le plus luxueux et le plus grand paquebot 
+		jamais construit. Le Titanic est dirigé par le Capitaine Edward Smith, qui a également sombré avec le navire. 
+		Le paquebot portait certains des gens les plus riches de l’époque, de même que des centaines d’émigrants de Grande-Bretagne 
+		et d’Irlande et d’ailleurs en Europe qui cherchaient une nouvelle vie aux États-Unis.
+	</p>
+	<p>
+		Le 14 avril 1912, quatre jours après le commencement de son voyage inaugural, il heurte un iceberg à 23 h 40 
+		(heure locale) et coule le 15 avril 1912 à 2 h 20 au large de Terre-Neuve. Le drame met en évidence l’insuffisance 
+		des règles de sécurité de l’époque, notamment le nombre insuffisant de canots de sauvetage et les carences dans les 
+		procédures d’évacuation d’urgence.
+	</p>
+	<p>
+		L’épave du Titanic est localisée le 1er septembre 1985 par le professeur Robert Ballard. Elle gît à 3 843 mètres 
+		de profondeur à 650 km au sud-est de Terre-Neuve. L’histoire du paquebot a marqué les mémoires, et suscité la 
+		publication de nombreux ouvrages (historiques ou de fiction) et la réalisation de longs métrages dont le film 
+		du même nom Titanic de James Cameron, sorti en 1997 et ayant entraîné un important regain d’intérêt pour le paquebot 
+		et son histoire.
+	</p>
+	<p>
+	Source : <a href="https://fr.wikipedia.org/wiki/Titanic">https://fr.wikipedia.org/wiki/Titanic</a>
+	</p>
+	
+	<h1>Informations sur le fichier passagers</h1>
+	<li>
+		Copier le fichier  «titanic-passengers.csv »
+		<span><a style='font-size:10.0pt;font-family:"Cambria","serif";' href="#_ftn1" name="_ftnref1" title="" ><sup>[1]</sup></a></span> 
+		depuis le dossier partagé de l'école vers un dossier sur votre espace de stockage 
+		de fichiers et faire un clic-droit sur le fichier (sans l'ouvrir) puis sélectionner « Propriétés » dans le menu qui s'affiche. 
+		Quelles informations obtient-on&nbsp;?
+	</li>
+	<div><textarea class=Reponse rows="2"></textarea></div>
+	
+	<p>
+		Ce sont les métadonnées du fichier.
+	</p>
+		
+	<div class=Cours> 
+	<p>
+		Les <b>métadonnées</b> (littéralement des données décrivant d'autres données) d'un fichier, ou <b>données EXIF</b> (<i>EXchangeable Image file Format</i>)  
+		contiennent des <b>informations sur ce fichier</b>, par exemple le nom de son auteur et la date à laquelle il a été enregistrée, ou les 
+		coordonnées GPS du lieu où a été prise une photo, etc.
+	</p>
+	</div>
+	
+	<li>
+		Quel est le type de ce fichier indiqué par les métadonnées du fichier&nbsp;?
+	</li>
+	<div><textarea class=Reponse rows="2"></textarea></div>
+
+	
+	
+	 	<!-- foonote -->
+	
+	<div><br clear=all>
+	<hr text-align:left size=1 width="33%">
+	<div id=ftn1>
+	<p class=FootnoteText><a href="#_ftnref1" name="_ftn1"><span class=FootnoteReference>[1]</span></a> 
+	Source : <a href="https://public.opendatasoft.com/explore/dataset/titanic-passengers/">https://public.opendatasoft.com/explore/dataset/titanic-passengers/</a>
+	, le séparateur décimal a été remplacé par des virgules (format français).	
+	</p>
+	</div>
+	
+	
+	<!-- fin page 1 -->
+	<div style="break-after:page"></div>
+	<!-- début page 2 -->
+
+	<li>
+	Ouvrir le fichier « titanic-passengers.csv » à l’aide d'un éditeur de texte (notepad, notepad++, 
+	Wordpad, etc.). Le fichier est il lisible dans l'éditeur de texte&nbsp;?
+	</li>
+	<div><textarea class=Reponse rows="2"></textarea></div>
+
+	<p>Quel caractère sépare les données les unes des autres&nbsp;?
+	</p>
+	<div><textarea class=Reponse rows="2"></textarea></div>
+	
+	<p>La première ligne contient les descripteurs des données. Quels sont-ils&nbsp;?
+	</p>
+	<div><textarea class=Reponse rows="2"></textarea></div>
+
+	<p>A votre avis, que contiennent les autres lignes&nbsp;?
+	</p>
+	<div><textarea class=Reponse rows="2"></textarea></div>
+
+	<div class=Cours> 
+	<p>
+	On peut stocker des données dans un fichier <b>csv</b> (pour <i>Comma Separated Values</i>) :
+	</p>
+	<ul>
+		<li>c'est un format de fichier <b>texte, ouvert</b> qui peut être créé, lu et modifié par tous les logiciels, </li>
+		<li>les données sont séparées par des <b>virgules</b>, des <b>points virgules</b>, ou encore des tabulations, « | », etc.</li>
+		<li>la première ligne contient (souvent) des informations qui caractérisent les données : les <b>descripteurs</b>,</li>
+		<li>chaque ligne suivante contient les données sur un objet ou une personne.</li>
+	</ul>
+	</div>
+
+	<h1>Importer les données dans un tableur</h1>
+	<p>La suite cette activité se fait sur tableur. Vous pouvez choisir Calc ou Excel au choix.</p>
+
+	<div class=Cours>
+	<p>
+	Un <b>tableur</b> est un logiciel capable de manipuler des feuilles de calcul avec de nombreuses possibilités : 
+	faire des recherches sur des données, des calculs, analyses statistiques, présenter des données sous formes 
+	graphique, etc.
+	</p>
+	<p>
+	De nombreux tableurs existent, parmi mes plus connus on trouve :
+	</p>
+	<ul>
+	<li>
+	  <b>Calc</b> est le tableur de la suite bureautique <b>LibreOffice</b> (anciennement <b>OpenOffice</b>) 
+	   est un logiciel <b>libre</b> et <b>gratuit</b> ;
+	</li>
+	<li>
+	  <b>Excel</b> est le tableur de la suite bureautique Office de <b>Microsoft</b> est un logiciel 
+	  <b>propriétaire</b> et <b>payant</b>.
+	</li>
+	</ul>
+	
+	<p>
+	Un logiciel <b>propriétaire</b>, par opposition à un logiciel <b>libre</b> ne permet pas l'étude ou la modification de 
+	son code source ni la distribution de copies. La plupart des logiciels propriétaires sont <b>payants</b> et la 
+	plupart des logiciels libres sont <b>gratuits</b>, mais ce n'est pas toujours le cas.
+	</p>
+	<p>
+	Par défaut, Calc utilise des fichiers enregistrés au format .ODS, alors qu'Excel utilise le format .XLS. 
+	XLS est un format fermé, propres à Microsoft alors qu’ODS est un format ouvert, mais les deux tableurs 
+	peuvent lire les deux formats.
+	</p>
+	</div>
+	
+	<li>
+	Ouvrir un nouveau classeur dans le tableur de votre choix : Calc ou Excel.
+	</li>
+
+	<p>
+	Pour importer les données depuis un fichier csv dans le tableur on utilise un formulaire de mise en forme 
+	permettant de paramétrer le séparateur de données, ici le point-virgule, afin d'obtenir un aperçu lisible et organisé des données.
+	</p>
+	
+	
+	<!-- fin page 2 -->
+	<div style="break-after:page"></div>
+	<!-- début page 3 -->
+	
+	
+	<p>
+	Avec <b>Calc</b>, une fenêtre d'import de fichier csv s'ouvre. Choisir le séparateur point-virgule seulement 
+	et cliquer OK.
+	</p>
+	<img style="width=100%;" src="images/1-importer-calc.png" alt="Fenêtre pour importer des données dans Calc">
+	<p>
+	Avec Excel, le fichier s'ouvre automatiquement avec les données correctement séparées.
+	<p>
+	<p>
+	Note : Si ce n'est pas le cas, il faut l'importer en utilisant 
+	<span> <img " src="images/1-importer-excel.png" alt="bouton Importer dans Excel"></span>
+	dans le menu Données. Une première fenêtre s'ouvre, choisir « Délimité » dans l’Étape 1.
+	</p>
+	<img style="width=100%;" src="images/1-importer-excel-assistant-1.png" alt="Assistant pour importer des données dans Excel">
+	<p> puis cliquer sur Suivant et choisir le point-virgule dans l’Étape 2 et Standard en Étape 3 et enfin 
+	mettre les données en =$A$1.
+	</p>
+	<img style="width=100%;" src="images/1-importer-excel-assistant-2.png" alt="Assistant pour importer des données dans Excel">
+
+
+
+	<!-- fin page 3 -->
+	<div style="break-after:page"></div>
+	<!-- début page 4 -->
+	
+	<h1>Recherches et tris sur les données</h1>
+	<p>
+	Le fichier est maintenant ouvert dans le tableur. On observe un collection de données structurées présentées 
+	sous forme d'une table.
+	</p>
+	<div style="float:right; width:40%; border:solid">
+	<p>
+	Une donnée est une valeur décrivant un objet ou une personne. Le descripteur est une information qui 
+	caractérise une donnée.
+	</p>
+	<p>
+	Des données ayant les mêmes descripteurs forment une collection de données, qui peut être représentée dans 
+	une table.
+	</p>
+	</div>
+	<p>On peut lire dans la première ligne les descripteurs de chaque colonne :</p>
+
+	<ul>
+	    <li>PassengerId : un  numéro identifiant le passager</li>
+	    <li>Survived : le passager a survecu ou non au naufrage</li>
+	    <li>Pclass :  la classes selon le prix du billet et la qualité de service</li>
+	    <li>Name, Sex : Age : le nom, le sexe et l'age du passager</li>
+	    <li>SibSp : nombre de frères et sœurs (Siblings) et époux/épouse  (Spouse) à bord</li>
+	    <li>Parch : nombre de parents et enfants (children) à bord</li>
+	    <li>Ticket, Fare, Cabin : le numéro de ticket, le prix payé (fare) en £ ( et le numéro de cabine du passager</li>
+	    <li>Embarked : le port d'embarquement du passager, Southampton, Cherbourg ou  Queentown </li>
+	</ul>
+	<p>
+	et dans chacune des lignes suivantes les données  concernant chaque passager. Certaines données peuvent être manquantes mais 
+	cela n’empêche pas de traiter le reste.
+	</p>
+
+	<li>De combien de passagers le fichier contient-il les informations&nbsp;?
+	</li>
+	<div><textarea class=Reponse rows="2"></textarea></div>
+
+	<li>Trier le fichier par âge . Quel était le passager le plus jeune&nbsp;?
+	</li>
+	<div><textarea class=Reponse rows="2"></textarea></div>
+
+	<p>
+	Quel age avait-il ? Ou avait-t-il embarqué ? A-t -il survécu ?&nbsp;?
+	<p>
+	<div><textarea class=Reponse rows="2"></textarea></div>
+
+	<li>
+	Combien il-y-avait-il  de classes différentes sur le Titanic&nbsp;?
+	</li>
+	<div><textarea class=Reponse rows="2"></textarea></div>
+
+	<li>Quel était le prix le plus cher pour la traversée&nbsp;?
+	</li>
+	<div><textarea class=Reponse rows="2"></textarea></div>
+
+
+	<p>
+	Quels sont les passagers qui ont payé ce prix-là&nbsp;?
+	</p>
+	<div><textarea class=Reponse rows="2"></textarea></div>
+
+
+	<li>Il manque le port d'embarquement pour deux passagers. Qui étaient- ils&nbsp;?
+	</li>
+	<div><textarea class=Reponse rows="2"></textarea></div>
+
+	<!-- fin page 4 -->
+	<div style="break-after:page"></div>
+	<!-- début page 5 -->
+
+
+
+	<h1>Calculs avec formules simples sur les données</h1>
+	
+	<p>Le tableur permet de faire des calculs sur les données numériques en utilisant des formules. </p>
+	
+	<div class=Cours> 
+	<p>
+	<img style="float:right; height:3em;" src="images/1-zone-saisie-formule.png" alt="Zone de saisie des formules">
+
+	La saisie d'une formule se fait en sélectionnant une cellule puis en utilisant la barre de formules. Pour entrer une formule
+	il suffit de commencer la saisie par le signe d'égalité (=) puis d'entrer les références des cellules à utiliser et éventuellement 
+	des opérateurs et/ou fonctions.
+	</diV>
+	
+	<p>
+	On voudrait calculer le nombre de membres de la famille de chaque passager, c'est-à-dire le total de son nombre de frères et sœurs 
+	et époux/épouse (descripteur SibSp) et de son nombre de parents et enfants à bord (descripteur Parch).
+	</p>
+	
+	<li>
+	Ajouter un nouveau descripteur «TotFam »en cellule M1.
+	</li>
+	<p>
+	Quelle formule faut-il ajouter en cellule M2 pour calculer le nombre de membres de la famille du premier passager de la table&nbsp;?
+	</p>
+	<div><textarea class=Reponse rows="2"></textarea></div>
+
+	<li>
+	Copier cette formule vers le bas pour renseigner le nombre de membres de la famille de chaque passager. Observer comment les numéros de ligne sont mis à jour dans chaque ligne.
+	</li>
+	<p> Quel est le nom de la plus grande famille embarquée sur le Titanic et combien étaient-ils sur ce bateau&nbsp;?
+	</p>
+	<div><textarea class=Reponse rows="2"></textarea></div>
+
+	<p>
+	Quel était le numéro de ticket des membres de cette famille&nbsp;?
+	</p>
+	<div><textarea class=Reponse rows="2"></textarea></div>
+
+	<p>
+	On constate que le fichier ne contient pas les noms de tous les membres de cette famille embarqués sur le Titanic, 
+	car il n’est pas complet.   Combien manque-t-il de personnes dans cette collection&nbsp;?
+	</p>
+	<div><textarea class=Reponse rows="2"></textarea></div>
+
+	<p>
+	Ont-ils tous survécus&nbsp;?
+	</p>
+	<div><textarea class=Reponse rows="2"></textarea></div>
+
+	<!-- fin page 5 -->
+	<div style="break-after:page"></div>
+	<!-- début page 6 -->
+
+	<h1>Calculs en utilisant des fonctions</h1>
+	
+	<p>
+	Les tableurs disposent d'un certain nombre de fonctions avancées pour faire des calculs plus complexes. Pour opérer sur de grandes 
+	quantités de données, les fonctions de calcul (somme, moyenne, maximum…) s’appliquent sur des plages de cellules. Par exemple :
+	</p>
+	
+	<div style="float:right; width:30%; border:solid">
+		<p>
+		On appelle <b>plage</b> de cellules (ou range en anglais), un rectangle de cellules contiguës, délimité par la cellule en haut à gauche 
+		et celle en bas à droite. 	On note habituellement une plage par les références aux 2 coins séparés par le symbole « : ».
+		</p>
+	</div>
+	
+	
+	<ul>
+	<li>NB() : compter le nombres de cellules indiquées</li>
+    <li>SOMME() : la somme des cellules indiquées</li>
+    <li>MOYENNE() : la moyenne des cellules indiquées</li>
+	</ul>
+	
+	<p>
+	Après avoir sélectionné la cellule où écrire une formule, on peut écrire le nom d'une fonction directement si on la connaît,
+	ou  cliquer sur le bouton
+	<span> <img " src="images/1-bouton-fx.png" alt="Bouton fx de saisie de formules"></span>
+	dans la barre de formules.
+	</p>
+	
+	<li>Pour compter le nombre total de passagers dans cette collection, on veut compter le nombre de cellules dans la plage
+	comprise entre A2 et A892.
+	</li>
+	
+	<p>Écrire en cellule O2 le texte « Nombre de passagers »  et en cellule P2 la formule
+	<code> = NB(A2:A892)</code>
+	
+	et vérifier qu'on obtient bien le nombre total de passagers trouvé à la question 5
+	</p>
+	
+	<li>
+	Maintenant pour afficher l'âge moyen des passagers écrire en cellule O3 « Age Moyen» et afficher en cellule P3 
+	la moyenne d'une plage de cellules de la colonne F entre les cellules F2 et F892 avec la formule suivante:
+	</li>
+	<code>= MOYENNE(F2:F892)</code>
+		
+	<p>Quel est l'âge moyen obtenu (modifier l'affichage pour arrondir le résultat à deux décimales)&nbsp;?</p>
+	<div><textarea class=Reponse rows="2"></textarea></div>
+
+	<p>
+	De le même façon, écrire en cellule O4 « Prix Moyen ». Quelle formule faut-il écrire en cellule P4 pour obtenir le 
+	prix moyen (descripteur Fare)  payé par les passagers&nbsp;?</p>
+	<div><textarea class=Reponse rows="1"></textarea></div>
+
+
+	<p>
+	Quel était le prix  moyen calculé&nbsp;?</p>
+	<div><textarea class=Reponse rows="2"></textarea></div>
+
+	<p>
+	Pour avoir des analyses plus détaillées, on utiliser des fonctions qui réalisent des <b>opérations avec certains critères</b>. 
+	Par exemple, NB. SI()  compte les cellules remplissant des critères spécifiés. 
+	</p>
+	
+	<li>Pour afficher les survivants, écrire en cellule O6 « Survivants » et en cellule P6 la formule =NB.SI(B2:B892 ; "=Yes").
+	Quel résultat obtient-on&nbsp;?
+	</li>
+	<div><textarea class=Reponse rows="1"></textarea></div>
+
+	<li>
+	Écrire en cellule O7 «Disparus». Quelle formule écrire en cellule P7 pour afficher les disparus pendant le naufrage&nbsp;?
+	</li>
+	<div><textarea class=Reponse rows="2"></textarea></div>
+
+
+	<li>
+	Afficher les nombres de  survivants et de personnes décédés en pourcentage en cellule Q6 et Q7.
+	On trouve (sur Wikipédia) l’information de 703 survivants pour environ 2200 passagers. Est-ce cohérent avec ces données&nbsp;?
+	</li>
+	<div><textarea class=Reponse rows="3"></textarea></div>
+ 
+ 	<!-- fin page 6 -->
+	<div style="break-after:page"></div>
+	<!-- début page 7 -->
+ 
+ 
+	<li>
+	On cherche à connaître la répartition par classes des passagers entre 1ere, 2nde et 3ieme classes.
+	</li>
+	<p>
+	Écrire en cellule O11, O12 et O13 les textes « 1ere classe », « 2nde classe » et « 3ieme classe ». 
+	</p>
+	<p>
+	Écrire en cellule P11 la formule suivante qui calcule le nombre de passagers en 1ere classe :
+	</p>
+	<code>  =NB.SI(C2:C892 ; "=1")</code>
+	<p>
+	… puis copier et coller la formule dans les deux cellules du dessous. P12 et P12.
+	</p>
+	<p>
+	Observer les plages de cellules dans les formules qui ont été copiées. Pourquoi ne sont-elles pas correctes&nbsp;?
+	</p>
+	<div><textarea class=Reponse rows="2"></textarea></div>
+
+
+	<div class=Cours> 
+		<p>
+		Pour ne pas changer les références  à des cellules ou plages de cellule dans une formule quand on la copie 
+		ou la déplace, il faut utiliser des références fixes indiquées avec le signe $.
+		</p>
+	</div>
+	
+	<p>
+	Ici il faut donc  modifier la formule saisie en P11  avec des références fixes :
+	</p>
+	
+	<code>=NB.SI($C$2:$C$892 ; "=1")</code>
+	
+	<p>
+	et la copier dans les deux cellules du dessous. Cette fois la plage de cellule dans la formule n'a pas changé. 
+	</p>
+	
+	<li>
+	Modifier la formule dans ces deux cellules copiées pour obtenir les passagers en 2nde et 3ieme classes. Compléter ci-dessous avec les résultats obtenus. 
+	</li>
+	
+	<img  src="images/1-passagers-par-classe.png" alt="Cellules indiquant le nombre de passagers par classe à remplir">
+
+	<p>
+	puis ajouter en cellules O14 « Total » et P14 la formule =SOMME(P11:P13) pour vérifier que la somme des passagers par classe est correcte.
+	</p>
+	
+	<li>
+	De la même façon, afficher les ports d'embarquements Southampton, Cherbourg et  Queentown dans les cellules O17 à O20 
+	et les nombres de passagers qui ont embarqués dans chacun de ces ports dans les cellules P17 à P20. Ajouter une ligne pour le total.
+	</li>
+
+	<img  src="images/1-passagers-par-port.png" alt="Cellules indiquant le nombre de passagers par port de départ à remplir">
+
+
+ 	<!-- fin page 7 -->
+	<div style="break-after:page"></div>
+	<!-- début page 8 -->
+
+	<h1>Représenter les données</h1>
+
+	<div style="float:right; width:30%; border:solid">
+		<p>Un <b>histogramme</b> est la représentation graphique de données par des barres horizontales ou verticales.</p>
+	</div>
+	
+	<p>
+	Les tableurs offrent de multiples possibilités pour visualiser des données de façon graphique..
+	</p>
+	
+	<li>
+	Pour afficher la répartition des passagers par classe, on va utiliser un histogramme. 
+	</li>
+	
+	
+	<img style="float:right; height:7em;" src="images/1-histogramme-selectionner.png" alt="Sélectionner les cellules pour l'histogramme">
+	
+	
+	<p>
+	Sélectionner la plage de cellules allant de  O11 à P13 puis 
+	</li>
+	
+	<ul>
+		<li>
+		Si vous utilisez  Calc, sélectionner le menu Insertion/Diagramme puis choisir Colonnes Empilées 
+		<span> <img style="height:3em;" src="images/1-histogramme-bouton-calc.png" alt="Bouton histogramme de Calc"></span>.
+
+		</li>
+		<li>
+		Si vous utilisez  Excel, cliquer sur l'icône
+		<span> <img style="height:3em;" src="images/1-histogramme-bouton-excel.png" alt="Bouton histogramme d'Excel"></span>.
+		dans le menu Insérer puis choisir « Histogramme empilé ».
+		</li>
+	</ul>
+	
+	<p>
+	Dessiner le résultat obtenu.
+	</p>
+	<img  src="images/1-histogramme-resultat.png" alt="Histogramme sur les classes de passagers à remplir">
+
+	
+	
+	<li>
+	Pour afficher la répartition des passagers par port d'embarquement, on va utiliser un diagramme circulaire (appelé camembert).
+	</li>
+	<p>
+	Sélectionner la plage de cellules allant de  O17 à P19 puis 
+	</p>
+	<ul>
+		<li>Si vous utilisez Calc, sélectionner le menu Insertion/Diagramme puis choisir Secteur
+		<span> <img style="height:3em;" src="images/1-diagramme-bouton-calc.png" alt="Bouton diagramme de Calc"></span>.
+
+		</li>
+		<li>Si vous utilisez Excel, cliquer sur l'icône
+		<span> <img style="height:3em;" src="images/1-diagramme-bouton-excel.png" alt="Bouton diagramme d'Excel"></span>.
+		dans le menu Insérer 
+		</li>
+	</ul>
+	<p>Dessiner le résultat obtenu.</p>
+	<img  src="images/1-diagramme-resultat.png" alt="Diagramme sur les classes de passagers à remplir">
+
+	
+	
+	<!-- fin page 8 -->
+	<div style="break-after:page"></div>
+	<!-- début page 9 -->
+
+	<h1>Les femmes et les enfants d’abord</h1>
+	<p>
+	On a coutume de dire « les femmes et les enfants d’abord » et on voudrait savoir si c'était le cas sur le Titanic. 
+	</p>
+	<img style="float:right; height:7em;" src="images/1-survivants-disparus.png" alt="Cellules de survivants et disparus à remplir">
+	
+	<li>
+	On va affiner les résultats des questions 15 et 16 Écrire en cellule O23 et O24 « Survivants » et « Disparus », 
+	puis en cellule P22 et Q22 « femmes » et « hommes ».
+	</li>
+
+	<p>
+	Pour calculer le nombre de femmes qui ont survécu en P23, il faut compter les passagers qui remplissent <u>deux conditions à 
+	la fois</u> : etre une femme et avoir survécu ! 
+	</p>
+	<p>
+	La fonction NB.SI() ne suffit plus, il faut utiliser à la place par la fonction NB.SI.ENS() qui applique <u>plusieurs critères</u>
+	aux cellules de <u>plusieurs plages</u> et compte le nombre de fois où tous les critères sont remplis en même temps.  
+	Ici on veut donc compter les cellules qui remplissent deux critères : 
+	</p>
+	<ul>
+		<li>Les valeurs de « Survived » qui se trouvent en $B$2:$B$892 sont "Yes" ; et en même temps</li>
+		<li>Les valeurs de « Sex »  en E$2:$E$892 sont "female".</li>
+	</ul>
+	
+	<li>Saisir dans la cellule P23  la fonction </li>
+	<p><code>=NB.SI.ENS(  </code></p>
+	<p>
+	...puis <b>sans appuyer sur la touche Entrées</b>, cliquer sur l’icône
+	<span> <img " src="images/1-bouton-fx.png" alt="Bouton fx de saisie de formules"></span>
+	pour remplir les paramètres en utilisant 
+	l'aide fournie afin de répondre aux questions suivantes.
+	</p>
+	
+	<li>
+	Compléter avec les formules adéquates pour obtenir les nombres de survivants et disparus en P23, P24, Q23 et Q24 et 
+	compléter ci-dessous avec les résultats obtenus.
+	</li>
+	<img  src="images/1-survivants-disparus-avec-nb-femmes.png" alt="Cellules de survivants et disparus avec le nombre de femmes indiqué">
+
+	<li>
+	Sélectionner la plage de cellules de O22 à Q24 puis afficher un histogramme en utilisant les colonnes empilées et dessiner le résultat obtenu.
+	</li>
+	<img  src="images/1-histogramme-survivants-disparus-par-sexe.png" alt="Histogramme du nombre de survivants et disparus par sexe">
+
+	<li>
+	Peut-on en conclure que les femmes ont été sauvées d'abord&nbsp;?
+	</li>
+	<div><textarea class=Reponse rows="1"></textarea></div>
+
+	<!-- fin page 9 -->
+	<div style="break-after:page"></div>
+	<!-- début page 10 -->
+
+	<li>
+	On va faire la même étude mais en regardant les survivants et les disparus par classe de ticket. 
+	</li>
+	<p>
+	Remplir les cellules  O26 à R28 avec les formules permettant de calculer chaque donnée  et compléter ci-dessous avec les résultats obtenus.
+	</p>
+
+	<img  src="images/1-survivants-disparus-avec-nb-1ere.png" alt="Cellules de survivants et disparus avec le nombre de 1ere classe indiqué">
+	
+	<p>
+	Puis afficher les résultats trouvés dans un histogramme comme précédemment.
+	</p>
+	<img  src="images/1-histogramme-survivants-disparus-par-classe.png" alt="Histogramme du nombre de survivants et disparus par classe">
+
+	
+	
+	<li>Les passagers de quelle classe de ticket ont eu le plus de disparus&nbsp;?
+	</li>
+	<div><textarea class=Reponse rows="1"></textarea></div>
+
+
+	<li>Pour finir, on va combiner les deux approches. Créer un tableau qui calcule les nombres de survivants et disparus 
+	chez les femmes et chez les hommes pour chaque classe de ticket et afficher les résultats dans un histogramme.
+	</li>
+	<img  src="images/1-survivants-disparus-avec-nb-femmes-1ere.png" alt="Cellules de survivants et disparus par sexe et par classe avec le nombre de femmes en 1ere classe indiqué">
+
+	<li>
+	Quels sont les passagers qui avaient le plus de chance de survivre ? Le moins de chance&nbsp;?
+	</li>
+	<div><textarea class=Reponse rows="1"></textarea></div>
+
+
+    </ol>	
+  </body>
+</html>
