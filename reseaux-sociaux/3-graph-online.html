@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+  <head>
+	<meta charset="UTF-8">
+	<meta name="author" content="Fabrice Perez">
+    <title>[Réseaux Sociaux] (2) Simulation Python</title>
+	
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  
+  <body lang=FR link=blue vlink=purple>
+    <div style='border-bottom:solid #4F81BD 1.0pt'>
+      <p class=MsoTitle>Réseaux Sociaux</p>
+    </div>
+    <p class=MsoSubtitle>Étude d'un réseau social avec Graph Online</p> 
+
+	
+    <ol>
+	<h1>Rappels sur les graphes</h1>
+	<p>Un graphe est une structure qui contient des <b>sommets</b> (ou <b>nœuds</b>) et chacune des paires de sommets associées est appelée arête. Un graphe peut être orientés ou non.</p> 
+	<img style="float:right; text-align:center; height:10em;" src="reseaux-sociaux-3-graph-online/graphe-6-sommets-wikipedia.png" alt="Graphe avec 6 sommets de wikipedia">
+
+    <ul>
+	<li>Orienté signifie que les arêtes ont une direction, la personne A peut aimer la personne B mais la personne B peut ne pas aimer la personne A.</li>
+    <li>Non orienté signifie que les arêtes ont 2 directions. Si la personne A serre la main de la personne B, cela signifie également que la personne B serre la main de la personne A.</li>
+	</ul>
+	<img style="float:left; text-align:center; height:15em;" src="images/3-graph-microsoft.png" alt="Graphe avec avec de nombreuses personnes">
+
+	<p>On a vu précédemment qu'un réseau social peut-être assimilé à un <b>graphe</b> dont&nbsp;:</p>
+	<ul>
+	<li>les <b>sommets</b>, ou <b>nœuds</b>, sont les individus.</li>
+    <li>Les <b>arêtes</b> sont les liens entre les individus. </li>
+	</ul>
+	<p>Par exemple qui sont les influenceurs de ce réseau social&nbsp;? </p>
+	<p>Des calculs sur les graphes nous permettent de déterminer qui au centre de ce groupe, si les personnes au centre sont proches des autres et si les membres du groupe sont éloignés les uns des autres.
+      
+	<p class=after>A partir d'un graphe on peut définir les mesures suivantes&nbsp;:</p></p>
+	<ul>
+	<li>La <b>distance</b> entre deux sommets est le nombre minimum d'arêtes qu'il faut parcourir pour aller d'un sommet à un autre.</li>
+    <li>L'<b>écartement</b> (ou <b>excentricité</b>) d'un sommet est la <b>distance maximale</b> entre ce sommet et tous les autres sommets du graphe. </li>
+    <li>Le <b>centre</b> d'un graphe est <b>le (ou les) sommet(s) dont l'écartement est minimal</b>. Un graphe peut avoir plusieurs centres.  </li>
+    <li>Le <b>rayon</b> d'un graphe est l'</b>écartement d'un centre</b> du graphe.</li>
+    <li>Le <b>diamètre</b> d'un graphe est <b>la plus longue distance</b> entre deux sommets de ce graphe.</li>
+	</ul>
+	
+	
+	<!-- fin page 1 -->
+	<div style="break-after:page"></div>
+	<!-- début page 2 -->
+	
+	<h1>Constellation</h1>
+	<p>Aller sur la page : <a href="https://castor-informatique.fr/questions/2017/2017-FR-11-graph-isomorphism/"> https://castor-informatique.fr/questions/2017/2017-FR-11-graph-isomorphism/</a>   </p>
+	<p>Déplacer les ronds bleus de gauche pour obtenir exactement la figure de droite. </p>
+	<li>Version &#9733;&nbsp;:</li>
+	<img style="display:block; text-align:center; height:15em;" src="images/3-constellation-1-etoile.png" alt="graphe de castor informatique">
+	<p>Aide : On peut remarquer qu'il y a exactement un sommet avec une seule arête. On peut placer ce sommet, ainsi que le sommet voisin auquel il est relié. </p>
+
+	<li>Version &#9733;&#9733;&nbsp;:</li>
+	<img style="display:block; text-align:center; height:15em;" src="images/3-constellation-2-etoiles.png" alt="graphe de castor informatique">
+	<p>Aide : On peut remarquer qu'il y a a exactement un sommet avec une seule arête. On peut placer ce sommet, ainsi que le sommet voisin auquel il est relié. On peut alors progresser en plaçant les trois sommets voisins. Et de là , on peut placer les quatre derniers sommets et compléter la figure.</p>
+	
+	<li>Version &#9733;&#9733;&#9733;&nbsp;: A faire quand l'activité est finie...réservée pour les braves&nbsp;!  </li>
+
+	<p>Ce défi illustre le problème de faire correspondre un <b>graphe</b>, c'est à dire un ensemble de <b>sommets</b> liés par des arêtes, avec un autre graphe ayant la même structure.</p>
+	<p>Ce problème, connu sous le nom d'<b>isomorphisme de graphe</b>, est particulièrement difficile : il n'existe aucun algorithme capable de résoudre efficacement ce problème pour des graphes quelconques. </p>
+	<p>Néanmoins, pour des graphes particuliers, comme par exemple ceux que l'on a considérés ici, il existe de nombreuses astuces permettant de mettre un graphe en correspondance avec un autre sans y passer des heures. Il est possible de programmer de telles astuces, comme par exemple celle décrite ici, qui consiste à étudier le nombre de voisins (le <b>degré</b>) de chaque sommet. </p>
+
+
+	
+	<!-- fin page 2 -->
+	<div style="break-after:page"></div>
+	<!-- début page 3 -->
+	
+	<h1>Graph Online</h1>
+	<p>La suite de cette activité est réalisée avec  le logiciel en ligne open source Graph Online. Ouvrez dans un navigateur  Graph Online sur le site Web  suivant : <a href="https://graphonline.ru/fr/"> https://graphonline.ru/fr/</a></p>
+	<img style="display:block; text-align:center; height:15em;" src="images/3-graph-online.png" alt="fenêtre du site graphonline.ru">
+	
+	<p>Si ce n'est pas déjà la cas, changer les Etiquettes des sommets en A, B, ...Z en haut à droite. </p>
+	<h2>Un petit réseau social</h2>
+	<p>Imaginons un réseau social possédant 8 abonnés: Alfredo, Benjamin, Camille, Danielle, Eric, Franck, Gaby et Hannah</p>
+	<ul>
+	<li>Alfredo est ami avec Benjamin, Danielle, Franck et Hannah.</li>
+    <li>Benjamin est ami avec Alfredo et Eric.</li>
+    <li>Camille n'est amie qu'avec Gaby.</li>
+    <li>Danielle est amie avec Alfredo, Franck, Gaby et Hannah.</li>
+    <li>Eric est ami avec Benjamin et Franck.</li>
+    <li>Franck est ami avec Alfredo, Danielle, Eric et Gaby.</li>
+    <li>Gaby est amie avec Camille, Danielle et Franck.</li>
+    <li>Hannah est amie avec Alfredo et Danielle.</li>
+	</ul>
+	<p>Les amitiés sont symétriques. On va représenter ce réseau social en utilisant les initiales de chaque abonné.</p>
+	<li> Disposer les sommets A, B, C, D, E,  F, G et H en cercle, puis ajouter les arêtes reliant les sommets pour représenter l'ensemble du réseau social. On choisit les options 'Sans Poids' et 'Non orienté' pour les arêtes. Dessiner le graphe obtenu.</li>
+	<div><textarea class=Reponse rows="16" ></textarea></div>
+
+	<!-- fin page 3 -->
+	<div style="break-after:page"></div>
+	<!-- début page 4 -->
+			
+	<li>La disposition des sommets n'a aucune importance, mais il est préférable de présenter un graphe le moins embrouillé possible. </li>
+	<p>Sélectionner le bouton <span> <img " src="images/3-bouton-par-defaut.png" alt="bouton 'par défaut'"></span>	        pour déplacer les sommets afin que les arêtes ne se croisent plus et tracer le résultat obtenu.</p>
+	<div><textarea class=Reponse rows="16"></textarea></div>
+
+	<p>La représentation du graphe est très pratique pour visualiser un réseau social avec peu de sommets comme ci-dessus mais, elle devient inutilisable pour un réseau social d'un milliard d'abonnés. Par ailleurs, elle ne permet pas de faire de calculs mathématiques ou de programmer des algorithmes. Il faut donc utiliser d'autres outils.</p>
+	<h2>Matrice d'adjacence</h2>
+	<img style="float:right; text-align:center; height:10em;" src="images/3-matrice-d-adjacence.png" alt="Exemple de matrice d'adjacence d'un graphe">
+
+	<p>La <b>matrice d'adjacence</b> d'un graphe est un tableau qui indique les arêtes qui lient des sommets entre eux sous forme de 0 et de 1 : soit 1 si le lien existe et 0 sinon. Pour un graphe donné la matrice d'adjacence associée est unique.</p>
+
+	<li>En utilisant le menu sous le bouton <span> <img " src="images/3-bouton-graphe.png" alt="bouton 'Graphe'"></span>, compléter la matrice d'adjacence ci-dessous avec les résultats obtenus.</li>
+		
+	<table text-align: center border=1 cellspacing=0 cellpadding=1 >
+	<tr>
+		<td text-align: center width=50><p>&nbsp;</p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td>
+	</tr>
+	<tr>
+		<td text-align: center width=50><p>&nbsp;</p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td>
+	</tr>
+	<tr>
+		<td text-align: center width=50><p>&nbsp;</p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td>
+	</tr>
+	<tr>
+		<td text-align: center width=50><p>&nbsp;</p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td>
+	</tr>
+	<tr>
+		<td text-align: center width=50><p>&nbsp;</p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td>
+	</tr>
+	<tr>
+		<td text-align: center width=50><p>&nbsp;</p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td>
+	</tr>
+	<tr>
+		<td text-align: center width=50><p>&nbsp;</p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td>
+	</tr>
+	<tr>
+		<td text-align: center width=50><p>&nbsp;</p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td>
+	</tr>
+	</table>
+
+
+	<p>Remarquez la troisième ligne et la troisième colonne : ce sont les mêmes puisque le graphe n'est pas orienté.</p>
+	
+		
+	<!-- fin page 4 -->
+	<div style="break-after:page"></div>
+	<!-- début page 5 -->
+
+	<h2>Matrice des distances</h2>
+	<p>Un autre outil est la <b>matrice des distances</b> donnant l'écartement (ou excentricité) entre deux sommets. 
+	<li>En utilisant  le menu sous le bouton Graphes,  compléter la matrice des distances ci-dessous avec les résultats obtenus.</li>
+	
+	<table text-align: center border=1 cellspacing=0 cellpadding=1 >
+	<tr>
+		<td text-align: center width=50><p>&nbsp;</p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td>
+	</tr>
+	<tr>
+		<td text-align: center width=50><p>&nbsp;</p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td>
+	</tr>
+	<tr>
+		<td text-align: center width=50><p>&nbsp;</p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td>
+	</tr>
+	<tr>
+		<td text-align: center width=50><p>&nbsp;</p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td>
+	</tr>
+	<tr>
+		<td text-align: center width=50><p>&nbsp;</p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td>
+	</tr>
+	<tr>
+		<td text-align: center width=50><p>&nbsp;</p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td>
+	</tr>
+	<tr>
+		<td text-align: center width=50><p>&nbsp;</p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td>
+	</tr>
+	<tr>
+		<td text-align: center width=50><p>&nbsp;</p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td>
+	</tr>
+	</table>
+
+	<li>Pour chaque sommet, indiquer son écartement maximal à tous les autres sommets&nbsp;:</li>
+		<table text-align: center border=1 cellspacing=0 cellpadding=1 >
+	<tr>
+		<td text-align: center width=50><p>A</p></td><td text-align: center width=50><p>B</p></td><td text-align: center width=50><p>C</p></td><td text-align: center width=50><p>D</p></td><td text-align: center width=50><p>E</p></td><td text-align: center width=50><p>F</p></td><td text-align: center width=50><p>G</p></td><td text-align: center width=50><p>H</p></td>
+	</tr>
+	<tr>
+		<td text-align: center width=50><p>&nbsp;</p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td>
+	</tr>
+	</table>
+	
+	<li>En déduire le(s) centre(s)  et le rayon du réseau social&nbsp;:</li>
+	<div><textarea class=Reponse rows="2"></textarea></div>
+
+
+	<li>Et son diamètre&nbsp;:</li>
+	<div><textarea class=Reponse rows="2"></textarea></div>
+
+
+
+	<h2>Centres, rayon, diamètre</h2>
+    <li>En utilisant une fonction sous le bouton <span> <img " src="images/3-bouton-algorithmique.png" alt="bouton 'Algorithmique'"></span>       , donner le rayon et le diamètre du graphe.</li>
+    <div><textarea class=Reponse rows="3"></textarea></div>
+      
+    <li>Quels sont les centres du graphe (sommets notés « Central »)&nbsp;?</li>
+	<div><textarea class=Reponse rows="2"></textarea></div>
+       
+    <li>Quels sont les sommets d'écartement maximal (notés « Périphéral »)&nbsp;:?</li>
+	<div><textarea class=Reponse rows="2"></textarea></div>
+      
+
+
+
+	
+		<!-- fin page 5 -->
+	<div style="break-after:page"></div>
+	<!-- début page 6 -->
+	
+	<h2>Matrice d'incidence</h2>
+	<p>Comme la matrice d'adjacence, la matrice d'incidence est un autre outil qui permet de décrire un graphe.</p>
+	<p>La <b>matrice d'incidence</b> d'un graphe est un tableau qui indique pour chaque sommet les arêtes qui arrivent sur ce sommet sous forme de 0 et 1. </b>
+	<p>Exemple&nbsp;: </p>
+	<img style="float:right; text-align:center; height:15em;" src="images/3-graphe-matrice-d-incidence.png" alt="Graphe exemple de matrice d'incidencedia">
+
+	<p>Prenons le cas du graphe ci-contre. Il possède 5 sommets et 6 arêtes, la matrice d'incidence aura donc 5 lignes et 6 colonnes&nbsp;: </p>
+    <ul>
+	<li>le sommet 1 est l'aboutissement des arêtes 1 et 5</li>
+    <li>le sommet 2 est l'aboutissement des arêtes 1, 2 et 6</li>
+    <li>le sommet 3 est l'aboutissement des arêtes 2 et 3</li>
+    <li>le sommet 4 est l'aboutissement des arêtes 3 et 4 </li>
+    <li>le sommet 5 est l'aboutissement des arêtes 4, 5 et 6</li>
+	<p>ce qui donne la matrice d'incidence&nbsp;: </p>
+	<img style="float:right; text-align:center; height:10em;" src="images/3-matrice-d-incidence-explication.png" alt="Graphe exemple de matrice d'incidencedia">
+
+	<img style="display:block; text-align:center; height:8em;" src="images/3-matrice-d-incidence.png" alt="matrice d'incidence">
+
+
+
+
+	<p>On remarque que chaque colonne a une somme égale à 2, puisque chaque arête a deux extrémités.</p>
+	<li> Combien de lignes et de colonnes comporte la matrice d'incidence du réseau social étudié&nbsp;?</li>
+    <div><textarea class=Reponse rows="2"></textarea></div>
+   
+       
+	<li>En utilisant  le menu sous le bouton span> <img " src="images/3-bouton-graphe.png" alt="bouton 'Graphe'"></span> ,  compléter la matrice d'incidence ci-dessous avec les résultats.</li>
+	<p>On note trois en positons du tableau par les lettres  X, Y et Z.</p>
+
+	<table text-align: center border=1 cellspacing=0 cellpadding=1 >
+	<tr>
+		<td text-align: center width=50><p>&nbsp;</p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td>
+	</tr>
+	<tr>
+		<td text-align: center width=50><p>&nbsp;</p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p>X</p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td>
+	</tr>
+	<tr>
+<td text-align: center width=50><p>&nbsp;</p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td>
+	</tr>
+	<tr>
+<td text-align: center width=50><p>&nbsp;</p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p>Y</p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td>
+	</tr>
+	<tr>
+<td text-align: center width=50><p>&nbsp;</p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td>	</tr>
+	<tr>
+<td text-align: center width=50><p>&nbsp;</p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td>	</tr>
+	<tr>
+		<td text-align: center width=50><p>&nbsp;</p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td>
+	</tr>
+	<tr>
+		<td text-align: center width=50><p>&nbsp;</p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p>Z</p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td><td text-align: center width=50><p></p></td>
+	</tr>
+	</table>
+
+	<li>Identifier les arêtes en positons X, Y et Z.</li>
+	<div><textarea class=Reponse rows="5">
+	X : arête entre  …  et ...<br>
+    Y:  <br>
+    Z: <br>
+	</textarea></div>
+
+	
+	
+	
+    </ol>	
+  </body>
+</html>

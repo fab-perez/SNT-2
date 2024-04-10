@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+  <head>
+	<meta charset="UTF-8">
+	<meta name="author" content="Fabrice Perez">
+    <title>[Réseaux Sociaux] (1) Modélisation</title>
+	
+    <link rel="stylesheet" type="text/css" href="../style.css">
+  </head>
+  
+  <body lang=FR link=blue vlink=purple>
+    <div style='border-bottom:solid #4F81BD 1.0pt'>
+      <p class=MsoTitle>Réseaux Sociaux</p>
+    </div>
+    <p class=MsoSubtitle>Modélisation</p> 
+
+	
+    <ol>
+	<h1>Découverte</h1>
+	<p> Aller sur la page : <a href="http://castor-informatique.fr/questions/2014/2014-SI-04-unknown-friendship/"> http://castor-informatique.fr/questions/2014/2014-SI-04-unknown-friendship/</a> .</p>
+	<p>Castor est arrivé dans une nouvelle classe. Il a très vite repéré qui est amis avec qui&nbsp;:</p>
+    <ul>
+	<table text-align: center border=0 cellspacing=1 cellpadding=1 >
+	<tr>
+	<td text-align: center width=200><li>Paul et Léa</li><li>Anna et Léa</li></td>
+	<td text-align: center width=200><li>Paul et Marc</li> <li>Bob et Julie</li></td>
+	<td text-align: center width=200><li>Marc et Bob</li> <li>Paul et Julie</li></td>
+	<td text-align: center width=200><li>Paul et Bob</li><li>Yann et Théo</li></li></td>
+	<td text-align: center width=200><li>Théo et Léa</li><li>Julie et Yann</li></li></td>	
+	</tr>
+	</table>
+	</ul>
+	<p>Pour y voir plus clair, Castor a dessiné le diagramme ci-dessous, où chaque rectangle  représente un ami et chaque trait relie deux amis. Cependant, il a oublié de noter les noms des personnes dans les rectangles.</p>
+	<li>Pouvez-vous les retrouver&nbsp;?</li>
+	<img style="display: block;  margin-left: auto;  margin-right: auto; height:15em;" src="images/1-graphe-castor.png" alt="Graphe de l'activité castor-informatique à remplir">
+
+	
+	<h1>Exemple simple de réseau social</h1>
+	<p>Huit personnes – Alban, Béatrice, Charles, Déborah, Eric, Fatima, Gerald, Hélène – sont toutes inscrites sur un même réseau social. Elles sont liées par les liens d'amitié suivant&nbsp;:</p>
+	<ul>
+	<li>Alban est ami avec Béatrice, Déborah, Eric et Fatima.</li>
+    <li>Béatrice est aussi amie avec Charles, Déborah, Eric et Gerald.</li>
+    <li>Charles est aussi ami avec Déborah et Hélène.</li>
+    <li>Déborah est aussi amie avec Gerald.</li>
+	</ul>
+	<p>Note : Un lien d'amitié est <b>non-orienté</b>, si Alban est ami avec Béatrice alors Béatrice est amie avec Alban.</p>
+
+	<li>Déterminer qui a le plus d'amis sur ce réseau.</li>
+	<div><textarea class=Reponse rows="1"></textarea></div>
+
+	<li>Et qui a le moins d'amis. </li>
+	<div><textarea class=Reponse rows="1"></textarea></div>
+
+	<li>Est-ce que ces huit personnes ont toutes au moins un ami en commun à travers lequel elles peuvent entrer en contact&nbsp;?</li>
+	<div><textarea class=Reponse rows="1"></textarea></div>
+
+	<p>S'il est relativement simple de répondre à ces trois premières questions, cela devient rapidement très compliqué quand le nombre de personnes augmente ou que l'on étudie leur relations plus en détail.</p>
+
+	<!-- fin page 1 -->
+	<div style="break-after:page"></div>
+	<!-- début page 2 -->
+		
+	
+	<h1>Matrice d'adjacence</h1>
+	<p>Une approche systématique consiste à modéliser les relations entre les personnes dans un tableau, appelé matrice d'adjacence, où l'on indique 1 quand deux personnes sont amies ou 0 quand elles ne le sont pas.</p>
+	<li>Compléter la matrice d'adjacence représentant le réseau social précédent.</li>
+
+		<table text-align: center border=1 cellspacing=0 cellpadding=1 >
+	<tr>
+	<td text-align: center width=100><p><b></b></p></td>
+	<td text-align: center width=100><p><b>Alban</b></p></td>
+	<td text-align: center width=100><p><b>Béatrice</b></p></td>
+	<td text-align: center width=100><p><b>Charles</b></p></td>
+	<td text-align: center width=100><p><b>Déborah</b></p></td>
+	<td text-align: center width=100><p><b>Éric</b></p></td>
+	<td text-align: center width=100><p><b>Fatima</b></p></td>
+	<td text-align: center width=100><p><b>Gérald</b></p></td>
+	<td text-align: center width=100><p><b>Hélène</b></p></td>
+	</tr>
+
+	<tr>
+	<td text-align: center width=100><p><b>Alban</b></p></td>
+	<td text-align: center width=100><p>0</p></td>
+	<td text-align: center width=100><p>1</p></td>
+	<td text-align: center width=100><p>0</p></td>
+	<td text-align: center width=100><p></p></td>
+	<td text-align: center width=100><p></p></td>
+	<td text-align: center width=100><p></p></td>
+	<td text-align: center width=100><p></p></td>
+	<td text-align: center width=100><p></p></td>
+	</tr>
+
+	<tr>
+	<td text-align: center width=100><p><b>Béatrice</b></p></td>
+	<td text-align: center width=100><p>1</p></td>
+	<td text-align: center width=100><p>0</p></td>
+	<td text-align: center width=100><p></p></td>
+	<td text-align: center width=100><p></p></td>
+	<td text-align: center width=100><p></p></td>
+	<td text-align: center width=100><p></p></td>
+	<td text-align: center width=100><p></p></td>
+	<td text-align: center width=100><p></p></td>
+	</tr>
+
+	<tr>
+	<td text-align: center width=100><p><b>Charles</b></p></td>
+	<td text-align: center width=100><p>0</p></td>
+	<td text-align: center width=100><p></p></td>
+	<td text-align: center width=100><p></p></td>
+	<td text-align: center width=100><p></p></td>
+	<td text-align: center width=100><p></p></td>
+	<td text-align: center width=100><p></p></td>
+	<td text-align: center width=100><p></p></td>
+	<td text-align: center width=100><p></p></td>
+	</tr>
+
+	<tr>
+	<td text-align: center width=100><p><b>Déborah</b></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td>
+	</tr>
+	
+	<tr>
+	<td text-align: center width=100><p><b>Éric</b></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td>
+	</tr>
+	
+	<tr>
+	<td text-align: center width=100><p><b>Fatima</b></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td>
+	</tr>
+	
+	<tr>
+	<td text-align: center width=100><p><b>Gérald</b></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td>
+	</tr>
+	
+	<tr>
+	<td text-align: center width=100><p><b>Hélène</b></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td>
+	</tr>
+	</table>
+
+	<h1>Graphe, sommets et arêtes</h1>
+	<p>Une autre approche consiste à représenter ce même réseau social dans un graphe.</p>
+	<li>On note Alban, Béatrice, Charles, Déborah, Eric, Fatima, Gerald, Hélène chacun par leur initiale. Compléter le schéma en traçant des lignes entre les individus représentant les liens d'amitié entre eux.</li>
+
+	<img style="display: block;  margin-left: auto;  margin-right: auto; height:20em;" src="images/1-graphe-8-lettres.png" alt="Graphe avec 8 sommets sans les aretes">
+
+
+	<div class=Cours> 
+    <p>Dans un <b>graphe</b>, les personnes sont représentées par des <b>sommets</b> (ou <b>noeud</b>) et les relations qui les relient entre elles sont appelées les </b>arêtes</b>(ou<b>liens</b>).</p>
+	</div>
+	
+	<!-- fin page 2 -->
+	<div style="break-after:page"></div>
+	<!-- début page 3 -->
+	
+	<h1>Distance et écartement d'un sommet</h1>
+	<p>On considère que sur ce réseau social les personnes ne peuvent communiquer qu'avec leurs amis.</p>
+	<ul>
+	<li>Alban parle directement avec ses amis par exemple Béatrice. On dit qu'il y une distance de 1 entre eux.</li>
+    <li>Mais pour parler avec Charles, il doit forcément passer par exemple par Béatrice ou Déborah. Il y a donc une distance de 2 entre Alban et Charles. </li>
+    <li>Et pour parler avec Hélène, il doit passer par Béatrice ou Déborah, qui toutes les deux parlent avec Charles et enfin Charles parle avec Hélène. Il y a donc une distance de 3 entre Alban et Hélène.</li>
+	</ul>
+	<div class=Cours> 
+    <p>La <b>distance</b> entre deux sommets du graphe est le <b>nombre minimum d'arêtes</b> qu'il faut parcourir pour aller d'un sommet à un autre (il peut y avoir plusieurs chemins mais on prend le plus court chemin).</p>
+	</div>
+
+	<li>Compléter le tableau suivant avec la distance entre chacun des sommets du graphe.</li>
+
+	<table text-align: center border=1 cellspacing=0 cellpadding=1 >
+	<tr>
+	<td text-align: center width=100><p><b></b></p></td>
+	<td text-align: center width=100><p><b>A</b></p></td>
+	<td text-align: center width=100><p><b>B</b></p></td>
+	<td text-align: center width=100><p><b>C</b></p></td>
+	<td text-align: center width=100><p><b>D</b></p></td>
+	<td text-align: center width=100><p><b>E</b></p></td>
+	<td text-align: center width=100><p><b>F</b></p></td>
+	<td text-align: center width=100><p><b>G</b></p></td>
+	<td text-align: center width=100><p><b>H</b></p></td>
+	<td text-align: center width=50><p><b></b></p></td>
+	<td text-align: center width=150><p><b>Écartement</b></p></td>
+	</tr>
+
+	<tr>
+	<td text-align: center width=100><p><b>A</b></p></td>
+	<td text-align: center width=100><p>0</p></td>
+	<td text-align: center width=100><p>1</p></td>
+	<td text-align: center width=100><p>2</p></td>
+	<td text-align: center width=100><p></p></td>
+	<td text-align: center width=100><p></p></td>
+	<td text-align: center width=100><p></p></td>
+	<td text-align: center width=100><p></p></td>
+	<td text-align: center width=100><p>3</p></td>
+	<td text-align: center width=50><p><b></b></p></td>
+	<td text-align: center width=150><p><b></b></p></td>
+	</tr>
+	
+	<tr>
+	<td text-align: center width=100><p><b>B</b></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td>
+	<td text-align: center width=50><p><b></b></p></td>
+	<td text-align: center width=150><p><b></b></p></td>
+	</tr>
+	
+	<tr>
+	<td text-align: center width=100><p><b>C</b></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td>
+	<td text-align: center width=50><p><b></b></p></td>
+	<td text-align: center width=150><p><b></b></p></td>
+	</tr>
+	
+	<tr>
+	<td text-align: center width=100><p><b>D</b></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td>
+	<td text-align: center width=50><p><b></b></p></td>
+	<td text-align: center width=150><p><b></b></p></td>
+	</tr>
+
+	
+	<tr>
+	<td text-align: center width=100><p><b>E</b></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td>
+	<td text-align: center width=50><p><b></b></p></td>
+	<td text-align: center width=150><p><b></b></p></td>
+	</tr>
+	
+		
+	<tr>
+	<td text-align: center width=100><p><b>F</b></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td>
+	<td text-align: center width=50><p><b></b></p></td>
+	<td text-align: center width=150><p><b></b></p></td>
+	</tr>
+	
+		
+	<tr>
+	<td text-align: center width=100><p><b>G</b></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td>
+	<td text-align: center width=50><p><b></b></p></td>
+	<td text-align: center width=150><p><b></b></p></td>
+	</tr>
+	
+	<tr>
+	<td text-align: center width=100><p><b>H</b></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td>
+	<td text-align: center width=50><p><b></b></p></td>
+	<td text-align: center width=150><p><b></b></p></td>
+	</tr>
+	</table>
+
+	<br>
+
+	<div class=Cours> 
+    <p>L'<b>écartement</b> (ou <b>excentricité</b>) d'un sommet est la <b>distance maximale</b> entre ce sommet et tous les autres sommets.</p>
+	</div>
+	
+	<li>Compléter le tableau avec l'écartement de  chacun des sommets du graphe.</li>
+	
+	<h1>Centre, rayon et diamètre</h1>
+	<p>On voit qu'aucune personne de ce réseau social ne peut communiquer directement avec toutes les autres, mais certaines peuvent le faire en passant par moins d'intermédiaires que d'autres. Ces personnes sont le centre du graphe.</p>
+	
+	<li>Quelles sont les personnes au centre du graphe étudié&nbsp;?</li>
+	<div><textarea class=Reponse rows="1"></textarea></div>
+
+	<div class=Cours> 
+    <p>Le <b>centre</b> d'un graphe est <b>le (ou les) sommet(s) dont l'écartement est minimal</b>. Un graphe peut avoir plusieurs centres. </p>
+	<p>On définit aussi&nbsp;:</p>
+	<p>Le <b>rayon</b> d'un graphe est <b>l'écartement d'un centre</b> du graphe. Il indique le nombre d'arêtes à parcourir pour joindre tous les autres sommet en partant du ou des centres du graphe.</p>
+	<p>Le <b>diamètre</b> d'un graphe est <b>la plus longue distance entre deux sommets de ce graphe</b>. Il indique le nombre maximum d'arêtes entre deux sommets les plus éloignés.</p>
+	</div>
+
+	<li>Déterminer le rayon et le diamètre du graphe étudié.</li>
+	<div><textarea class=Reponse rows="1"></textarea></div>
+
+.
+		<!-- fin page 3 -->
+	<div style="break-after:page"></div>
+	<!-- début page 4 -->
+	
+	<h1>Graphes orientés</h1>
+	<p>Dans certains réseaux sociaux la relation entre personnes est symétrique, c'est le cas par exemple d'« amis » sur Facebook ou de « contacts » sur Linkedin. Si un membre A est en relation avec un membre B, alors B est également en relation avec A. On dit que la relation est <b>non-orientée</b>.</p>
+	<p>D'autres réseaux sociaux, par exemple Twitter ou Instagram1, permettent de suivre une personne sans que cela ne soit réciproque. Elon Musk ne suit pas tous ses « followers » sur Twitter. On dit alors que la relation est <b>orientée</b>. On  représente le sens d'une relation orientée par une flèche indiquant le <b>sens d'une arête</b> (un « <b>arc</b> »). </p>
+
+	<img style="float:right; text-align:center; height:10em;" src="images/1-graphe-5-lettres.png" alt="Graphe avec 5 sommets sans les aretes">
+
+	<li>Compléter le graphe orienté d'un réseau à 5 membres A, B, C, D, et E, avec les relations (orientées) suivantes&nbsp;:</li>
+	<ul>
+	<li>A est en relation avec C&nbsp;;</li>
+    <li>B est en relation avec A&nbsp;;</li>
+    <li>C est en relation avec B, D et E&nbsp;;</li>
+    <li>D est en relation avec E&nbsp;;</li>
+    <li>E est en relation avec A.</li>
+	</ul>
+	
+	<li> Compléter le tableau des distances entre sommets (le tableau n'est pas symétrique) et déterminer les écartements.</li>
+
+<table text-align: center border=1 cellspacing=0 cellpadding=1 >
+	<tr>
+	<td text-align: center width=100><p><b></b></p></td>
+	<td text-align: center width=100><p><b>A</b></p></td>
+	<td text-align: center width=100><p><b>B</b></p></td>
+	<td text-align: center width=100><p><b>C</b></p></td>
+	<td text-align: center width=100><p><b>D</b></p></td>
+	<td text-align: center width=100><p><b>E</b></p></td>
+	<td text-align: center width=50><p><b></b></p></td>
+	<td text-align: center width=150><p><b>Écartement</b></p></td>
+	</tr>
+
+	<tr>
+	<td text-align: center width=100><p><b>A</b></p></td>
+	<td text-align: center width=100><p></p></td>
+	<td text-align: center width=100><p></p></td>
+	<td text-align: center width=100><p></p></td>
+	<td text-align: center width=100><p></p></td>
+	<td text-align: center width=100><p></p></td>
+	<td text-align: center width=50><p><b></b></p></td>
+	<td text-align: center width=150><p><b></b></p></td>
+	</tr>
+	
+	
+	<tr>
+	<td text-align: center width=100><p><b>B</b></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=50><p><b></b></p></td><td text-align: center width=150><p><b></b></p></td>
+	</tr>
+	
+	<tr>
+	<td text-align: center width=100><p><b>C</b></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=50><p><b></b></p></td><td text-align: center width=150><p><b></b></p></td>
+	</tr>
+
+	<tr>
+	<td text-align: center width=100><p><b>D</b></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=50><p><b></b></p></td><td text-align: center width=150><p><b></b></p></td>
+	</tr>
+	
+	<tr>
+	<td text-align: center width=100><p><b>E</b></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=100><p></p></td><td text-align: center width=50><p><b></b></p></td><td text-align: center width=150><p><b></b></p></td>
+	</tr>
+	</table>
+
+	<br>
+	<li> En déduire le centre, le rayon et le diamètre de ce graphe.</li>
+	<div><textarea class=Reponse rows="1"></textarea></div>
+
+
+	<h1>Les amis de mes amis...</h1>
+	<p>Lucie et ses amis font partie d'un même réseau social. Le graphe qui représente les relations entre Lucie et ses amis, ainsi que ses amis dans ce réseau est dessiné ci-dessous.</p>
+
+	<img style="float:right; text-align:center; height:20em;" src="images/1-graphe-12-noms.png" alt="Graphe avec 12 prénoms">
+
+	<p>Ce réseau social fonctionne de la manière suivante (inspiré de réseaux sociaux tels Snapchat ou Instagram):</p>
+	<ul>
+	<li>Quelqu'un peut partager une photo avec certains de ses amis. </li>
+    <li>Les amis avec qui la photo est partagée, peuvent voir et commenter la photo.  </li>
+    <li>Si quelqu'un commente une photo alors tous ses propres amis peuvent à leur tour voir le commentaire de la photo.  </li>
+    <li>Par contre, ils ne peuvent pas commenter la photo, sauf si son propriétaire avait choisi de partager les photos avec eux initialement. </li>
+	</ul>
+	
+	
+	.
+		<!-- fin page 4 -->
+	<div style="break-after:page"></div>
+	<!-- début page 5 -->
+	
+	<li>Compléter le tableau des distance entre sommets et déterminer l'écartement de chaque sommet.</li>
+	
+		<table text-align: center border=1 cellspacing=0 cellpadding=1 >
+	<tr>
+	<td text-align: center width=100><p><b></b></p></td>
+	<td text-align: center width=100><p><b>Alexis</b></p></td>
+	<td text-align: center width=100><p><b>Côme</b></p></td>
+	<td text-align: center width=100><p><b>David</b></p></td>
+	<td text-align: center width=100><p><b>Eve</b></p></td>
+	<td text-align: center width=100><p><b>Jason</b></p></td>
+	<td text-align: center width=100><p><b>Jean</b></p></td>
+	<td text-align: center width=100><p><b>Lena</b></p></td>
+	<td text-align: center width=100><p><b>Lucie</b></p></td>
+	<td text-align: center width=100><p><b>Marie</b></p></td>
+	<td text-align: center width=100><p><b>Noa</b></p></td>
+	<td text-align: center width=100><p><b>Pierre</b></p></td>
+	<td text-align: center width=100><p><b>Sam</b></p></td>
+	<td text-align: center width=50><p><b></b></p></td>
+	<td text-align: center width=150><p><b>Écartement</b></p></td>
+	</tr>
+
+	<tr>
+	<td text-align: center width=100><p><b>Alexis</b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=50><p><b></b></p></td><td text-align: center width=150><p><b></b></p></td>
+	</tr>
+
+	<tr>
+	<td text-align: center width=100><p><b>Côme</b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=50><p><b></b></p></td><td text-align: center width=150><p><b></b></p></td>
+	</tr>
+
+	<tr>
+	<td text-align: center width=100><p><b>David</b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=50><p><b></b></p></td><td text-align: center width=150><p><b></b></p></td>
+	</tr>
+
+	<tr>
+	<td text-align: center width=100><p><b>Eve</b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=50><p><b></b></p></td><td text-align: center width=150><p><b></b></p></td>
+	</tr>
+
+	<tr>
+	<td text-align: center width=100><p><b>Jason</b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=50><p><b></b></p></td><td text-align: center width=150><p><b></b></p></td>
+	</tr>
+
+	<tr>
+	<td text-align: center width=100><p><b>Jean</b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=50><p><b></b></p></td><td text-align: center width=150><p><b></b></p></td>
+	</tr>
+
+	<tr>
+	<td text-align: center width=100><p><b>Lena</b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=50><p><b></b></p></td><td text-align: center width=150><p><b></b></p></td>
+	</tr>
+
+	<tr>
+	<td text-align: center width=100><p><b>Lucie</b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=50><p><b></b></p></td><td text-align: center width=150><p><b></b></p></td>
+	</tr>
+
+	<tr>
+	<td text-align: center width=100><p><b>Marie</b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=50><p><b></b></p></td><td text-align: center width=150><p><b></b></p></td>
+	</tr>
+
+	<tr>
+	<td text-align: center width=100><p><b>Noa</b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=50><p><b></b></p></td><td text-align: center width=150><p><b></b></p></td>
+	</tr>
+
+	<tr>
+	<td text-align: center width=100><p><b>Pierre</b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=50><p><b></b></p></td><td text-align: center width=150><p><b></b></p></td>
+	</tr>
+
+	<tr>
+	<td text-align: center width=100><p><b>Sam</b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=100><p><b></b></p></td><td text-align: center width=50><p><b></b></p></td><td text-align: center width=150><p><b></b></p></td>
+	</tr>
+	</table>
+	
+
+	<li>En déduire le centre, le rayon et le diamètre de ce graphe.</li>
+	<div><textarea class=Reponse rows="2"></textarea></div>
+
+	<li>Lucie a partagé une photo avec ces amis. Qui d'autre pourrait la voir parmi toutes les personnes ci-dessus ? Justifier.</li>
+	<div><textarea class=Reponse rows="2"></textarea></div>
+
+	<li>Lucie a ajouté une nouvelle photo sur son profil, elle ne veut pas que Jason puisse la voir. Avec qui peut-elle partager sa photo en étant sûre que Jason ne puisse pas la voir ?</li>
+ 	<div><textarea class=Reponse rows="2"></textarea></div>
+
+ 
+	<h1>Exercices</h1>
+	<li>Déterminez le (ou les) centre(s) du graphe non orienté ci-contre.</li>
+	<div><textarea class=Reponse rows="2"></textarea></div>
+
+
+	<li>En déduire son rayon et son diamètre.</li>
+	<div><textarea class=Reponse rows="2"></textarea></div>
+
+
+	<li>Construisez un graphe à partir des informations ci-dessous et en déduire son diamètre, son centre et son rayon.</li>
+	<ul>
+	<li>A est ami avec B, C et D</li>
+    <li>B est ami avec A et D</li>
+    <li>C est ami avec A, E et D</li>
+    <li>D est ami avec tous les autres abonnés</li>
+    <li>E est ami avec C, D et F</li>
+    <li>F est ami avec E et D</li>
+	</ul>
+ 	<div><textarea class=Reponse rows="3"></textarea></div>
+
+ 
+		<!-- fin page 5 -->
+	<div style="break-after:page"></div>
+	<!-- début page 6 -->
+
+	<li>On considère le graphe d'un réseau social avec sa matrice d'adjacence.</li>
+	<img style="float:right; text-align:center; height:15em;" src="images/1-graphe-7-noms.png" alt="Graphe avec 7 prénoms">
+
+
+<table text-align: center border=1 cellspacing=0 cellpadding=1 >
+	<tr>
+	<td text-align: center width=100><p><b></b></p></td>
+	<td text-align: center width=100><p><b>A</b></p></td>
+	<td text-align: center width=100><p><b>B</b></p></td>
+	<td text-align: center width=100><p><b>C</b></p></td>
+	<td text-align: center width=100><p><b>D</b></p></td>
+	<td text-align: center width=100><p><b>E</b></p></td>
+	<td text-align: center width=100><p><b>F</b></p></td>
+	<td text-align: center width=100><p><b>G</b></p></td>
+	</tr>
+
+	<tr>
+	<td text-align: center width=100><p><b>A</b></p></td>
+	<td text-align: center width=100><p>0</p></td>
+	<td text-align: center width=100><p>1</p></td>
+	<td text-align: center width=100><p>1</p></td>
+	<td text-align: center width=100><p>0</p></td>
+	<td text-align: center width=100><p>0</p></td>
+	<td text-align: center width=100><p>0</p></td>
+	<td text-align: center width=100><p>0</p></td>
+	</tr>
+
+	<tr>
+	<td text-align: center width=100><p><b>B</b></p></td>
+	<td text-align: center width=100><p>1</p></td>
+	<td text-align: center width=100><p>0</p></td>
+	<td text-align: center width=100><p>1</p></td>
+	<td text-align: center width=100><p>1</p></td>
+	<td text-align: center width=100><p>1</p></td>
+	<td text-align: center width=100><p>0</p></td>
+	<td text-align: center width=100><p>0</p></td>
+	</tr>
+
+	<tr>
+	<td text-align: center width=100><p><b>C</b></p></td>
+	<td text-align: center width=100><p>1</p></td>
+	<td text-align: center width=100><p>1</p></td>
+	<td text-align: center width=100><p>0</p></td>
+	<td text-align: center width=100><p>0</p></td>
+	<td text-align: center width=100><p>0</p></td>
+	<td text-align: center width=100><p>1</p></td>
+	<td text-align: center width=100><p>0</p></td>
+	</tr>
+
+	<tr>
+	<td text-align: center width=100><p><b>D</b></p></td>
+	<td text-align: center width=100><p>0</p></td>
+	<td text-align: center width=100><p>1</p></td>
+	<td text-align: center width=100><p>0</p></td>
+	<td text-align: center width=100><p>0</p></td>
+	<td text-align: center width=100><p>1</p></td>
+	<td text-align: center width=100><p>0</p></td>
+	<td text-align: center width=100><p>1</p></td>
+	</tr>
+
+	<tr>
+	<td text-align: center width=100><p><b>E</b></p></td>
+	<td text-align: center width=100><p>0</p></td>
+	<td text-align: center width=100><p>1</p></td>
+	<td text-align: center width=100><p>0</p></td>
+	<td text-align: center width=100><p>1</p></td>
+	<td text-align: center width=100><p>0</p></td>
+	<td text-align: center width=100><p>1</p></td>
+	<td text-align: center width=100><p>0</p></td>
+	</tr>
+
+	<tr>
+	<td text-align: center width=100><p><b>F</b></p></td>
+	<td text-align: center width=100><p>0</p></td>
+	<td text-align: center width=100><p>0</p></td>
+	<td text-align: center width=100><p>1</p></td>
+	<td text-align: center width=100><p>0</p></td>
+	<td text-align: center width=100><p>1</p></td>
+	<td text-align: center width=100><p>0</p></td>
+	<td text-align: center width=100><p>0</p></td>
+	</tr>
+
+	<tr>
+	<td text-align: center width=100><p><b>G</b></p></td>
+	<td text-align: center width=100><p>0</p></td>
+	<td text-align: center width=100><p>0</p></td>
+	<td text-align: center width=100><p>0</p></td>
+	<td text-align: center width=100><p>1</p></td>
+	<td text-align: center width=100><p>0</p></td>
+	<td text-align: center width=100><p>0</p></td>
+	<td text-align: center width=100><p>0</p></td>
+	</tr>
+	</table>
+
+	<li>Identifier les noms des personnes correspondant à chaque lettre dans la matrice d'adjacence.</li>
+	 	<div><textarea class=Reponse rows="3"></textarea></div>
+
+	<li> On étudie deux réseaux sociaux similaires, l'un est non orienté (type Facebook), l'autre est orienté (type Twitter).</li>
+	<p text-align:"center"><i>Graphe d'un réseau social non orienté</i><p>
+	<img style="display: block;  margin-left: auto;  margin-right: auto; height:20em;" src="images/1-graphe-7-noms-non-oriente.png" alt="Graphe non orienté avec 7 prénoms ">
+
+	<p text-align:"center"><i>Graphe d'un réseau social orienté</i><p>
+	<img style="display: block;  margin-left: auto;  margin-right: auto; height:20em;" src="images/1-graphe-7-noms-oriente.png" alt="Graphe orienté avec 7 prénoms ">
+	
+	<li> Comparer ces deux réseaux sociaux en utilisant les mesures d'un graphe (centre, rayon, diamètre) et déterminer qui est au centre de chaque réseau et lequel est le plus étendu.</li>
+	
+	
+      
+    </ol>	
+  </body>
+</html>

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+  <head>
+	<meta charset="UTF-8">
+	<meta name="author" content="Fabrice Perez">
+    <title>[Réseaux Sociaux] (2) Simulation Python</title>
+	
+    <link rel="stylesheet" type="text/css" href="../style.css">
+  </head>
+  
+  <body lang=FR link=blue vlink=purple>
+    <div style='border-bottom:solid #4F81BD 1.0pt'>
+      <p class=MsoTitle>Réseaux Sociaux</p>
+    </div>
+    <p class=MsoSubtitle>Simulation Python</p> 
+
+	
+    <ol>
+	<h1>Rappels sur les graphes</h1>
+	<div class=Cours> 
+	<img style="float:right; text-align:center; height:12em;" src="images/2-graphe-7-noms.png" alt="Graphe avec 7 personnes">
+
+	<p>On a vu précédemment qu'un réseau social peut-être assimilé à un <b>graphe</b> dont&nbsp;:</p>
+	<ul>
+	<li>les <b>sommets</b>, ou <b>noeuds</b>, sont les individus (par exemple Julie, Claudia, Youma, etc.</li>
+	<li>Les <b>arêtes</b> sont les liens entre les individus (Julie avec Claudia, Julie avec Youma, etc.).</li>
+	</ul>
+	<p>A partir d'un graphe on peut définir les mesures suivantes&nbsp;:</p>
+	<ul>
+    <li>La <b>distance</b> entre deux sommets est le nombre minimum d'arêtes qu'il faut parcourir pour aller d'un sommet à un autre.</li>
+	<li>L'<b>écartement</b> (ou <b>excentricité</b>) d'un sommet est la <b>distance maximale</b> entre ce sommet et tous les autres sommets du graphe.</li>
+	<li>Le <b>centre</b> d'un graphe est <b>le (ou les) sommet(s) dont l'écartement est minimal</b>. Un graphe peut avoir plusieurs centres.</li>
+	<li>Le <b>rayon</b> d'un graphe est l'<b>écartement d'un centre</b> du graphe.</li>
+	<li>Le <b>diamètre</b> d'un graphe est la <b>plus longue distance</b> entre deux sommets de ce graphe.</li>
+	</ul>
+	<p>On distingue les graphes <b>orientés</b> ou <b>non orientés</b>.</p>
+	</div>
+	<h1>Le module networkx</h1>
+	<p>Le module <code>networkx</code> de Python va nous permettre de manipuler facilement des graphes.</p>
+	
+	<div class=Cours> 
+    <p>En Python, un <b>module</b> est un fichier contenant des fonctions et de variables prédéfinies que l'on peut <b>importer 
+	dans un programme</b> pour les utiliser. Par exemple, le module <code>math</code> contient des fonctions mathématiques telles que <code>sin()</code> ou <code>sqrt()</code> et des variables telles que <code>pi</code>.</p>
+	</p>
+	</div>
+
+	<p>Pour importer un module dans un programme, on utilise l'instruction <code>import</code>.</p>
+	<li>Dans un nouveau programme, écrire l'instruction suivante qui permet d'importer le module <code>networkx</code>&nbsp;:</li>
+	<code>import networkx as nx</code>
+	<br>
+	<p>Puis tester le programme. S'il n'y a pas de message d'erreur, le module est importé correctement et on peut maintenant utiliser les fonctions du module <code>networkx</code>. L'extension « <code>as nx</code> » signifie que l'on désigne ce module dans la suite du programme sous le nom <code>nx</code> plutôt que d'écrire son nom complet, c'est un alias.</p>
+	
+	<p>A la différence des fonctions que l'on utilise habituellement dans un programme, comme <code>print()</code> ou <code>range()</code>,
+	pour accéder à une fonction qui appartient à ce module <code>nx</code>, par exemple la fonction « <code>Graph()</code> » qui permet de créer un graphe, on la fera précéder de « <code>nx.</code> ». On écrira donc: <code>nx.Graph()</code>.
+	
+	
+	<!-- fin page 1 -->
+	<div style="break-after:page"></div>
+	<!-- début page 2 -->
+		
+	<p>On va maintenant représenter le réseau social suivant dans le programme Python&nbsp;:</p>
+	<img style="display:block; text-align:center; height:20em;" src="images/2-graphe-7-noms.png" alt="Graphe avec 7 personnes">
+
+	<li>En prenant exemple sur les instructions déjà écrites ci-dessous, compléter le programme permettant de créer un graphe appelé G avec les sommets et leurs arêtes qui les relient entre eux.</li>
+	<div style="float:right; border:solid 1px">
+	<p><code>nx.Graph()</code> crée un graphe.<br>
+	<code>add_node()</code> permet d'ajouter un sommet ou nœud (node en anglais) à un graphe.<br>
+	<code>add_edge()</code> permet d'ajouter une arête (edge en anglais) à un graphe.</p>
+	</div>
+
+	<code>
+	import networkx as nx<br>
+	<br>
+	G = nx.Graph()<br>
+	# sommets<br>
+	G.add_node('Julie')<br>
+	G.add_node('Claudia')<br>
+	G.add_node('Youma')
+	<div><textarea class=Reponse rows="4"># completer...</textarea></div>
+	# aretes<br>
+	G.add_edge('Julie', 'Claudia')<br>
+	G.add_edge('Julie', 'Youma')<br>
+	<div><textarea class=Reponse rows="6"># completer...</textarea></div>
+	</code>
+	<li>On peut vérifier que le graphe est bien renseigné en affichant le nombre de sommets et d'arêtes. Ajouter les deux instructions suivantes à la fin du  programme&nbsp;:</li>
+
+	<code>
+	print("nombre de sommets = ", G.number_of_nodes())<br>
+	print("nombre d'arêtes = ", G.number_of_edges())<br>
+	<br>
+	</code>
+	<li>Combien de sommets et d'arêtes affiche-t-il ? Vérifier sur le schéma ci-dessus les résultats obtenus.</li>
+	<div><textarea class=Reponse rows="2"></textarea></div>
+
+		
+	<!-- fin page 2 -->
+	<div style="break-after:page"></div>
+	<!-- début page 3 -->
+		
+	<li>On veut maintenant afficher le diamètre, le rayon et le centre du graphe. Ajouter les instructions suivantes à la fin du  programme&nbsp;:</li>
+	<code>
+	print("diametre = ", nx.diameter(G))<br>
+	print("rayon = ", nx.radius(G))<br>
+	print("centre = ", nx.center(G))<br>
+	<br>
+	</code>
+	<p>Quels résultats obtient-on&nbsp;?</p>
+	<div><textarea class=Reponse rows="4"></textarea></div>
+	
+	<li>Pour visualiser les sommets et les liens sous forme graphique on utilise le module <code>matplotlib.pyplot</code>.</li>
+	<p>Ajouter en début de programme l'instruction suivante pour importer ce module (avec l'alias <code>plt</code>)&nbsp;:</p>
+	<code>
+	import matplotlib.pyplot as plt<br>
+	</code>
+	<p>Et en fin de programme&nbsp: </p>
+	<code>
+	nx.draw(G, with_labels = True)<br>
+	plt.draw()<br>
+	plt.show()<br>
+	</code>
+
+	<p>Dessiner le résultat obtenu.</p>
+	<div><textarea class=Reponse rows="15"></textarea></div>
+
+	<!-- fin page 3 -->
+	<div style="break-after:page"></div>
+	<!-- début page 4 -->
+		
+
+	<p>Pour visualiser la matrice d'adjacence de ce graphe, on utilise la fonction <code>to_numpy_matrix</code> du module <code>networkx</code>.</p>
+
+	<li>Ajouter en fin  de programme l'instruction suivante pour afficher la matrice d'adjacence de G&nbsp;:</li>
+	<code>print(nx.to_numpy_matrix(G))<br></code>
+
+	<li>Compléter la matrice ci-dessous avec les résultats obtenus.</li>
+	
+			<table align= center border=1 cellspacing=0 cellpadding=1 >
+	<tr>
+		<td align= center width=100><p>0</p></td>
+		<td align= center width=100><p>...</p></td>
+		<td align= center width=100><p>...</p></td>
+		<td align= center width=100><p></p></td>
+		<td align= center width=100><p></p></td>
+		<td align= center width=100><p></p></td>
+		<td align= center width=100><p></p></td>
+	</tr>
+
+	<tr>
+		<td align= center width=100><p>...</p></td>
+		<td align= center width=100><p></p></td>
+		<td align= center width=100><p></p></td>
+		<td align= center width=100><p></p></td>
+		<td align= center width=100><p></p></td>
+		<td align= center width=100><p></p></td>
+		<td align= center width=100><p></p></td>
+	</tr>
+
+	<tr>
+		<td align= center width=100><p>...</p></td>
+		<td align= center width=100><p></p></td>
+		<td align= center width=100><p></p></td>
+		<td align= center width=100><p></p></td>
+		<td align= center width=100><p></p></td>
+		<td align= center width=100><p></p></td>
+		<td align= center width=100><p></p></td>
+	</tr>
+
+	<tr>
+		<td align= center width=100><p>...</p></td>
+		<td align= center width=100><p></p></td>
+		<td align= center width=100><p></p></td>
+		<td align= center width=100><p></p></td>
+		<td align= center width=100><p></p></td>
+		<td align= center width=100><p></p></td>
+		<td align= center width=100><p></p></td>
+	</tr>
+
+	<tr>
+		<td align= center width=100><p>...</p></td>
+		<td align= center width=100><p></p></td>
+		<td align= center width=100><p></p></td>
+		<td align= center width=100><p></p></td>
+		<td align= center width=100><p></p></td>
+		<td align= center width=100><p></p></td>
+		<td align= center width=100><p></p></td>
+	</tr>
+
+	<tr>
+		<td align= center width=100><p>...</p></td>
+		<td align= center width=100><p></p></td>
+		<td align= center width=100><p></p></td>
+		<td align= center width=100><p></p></td>
+		<td align= center width=100><p></p></td>
+		<td align= center width=100><p></p></td>
+		<td align= center width=100><p></p></td>
+	</tr>
+
+	<tr>
+		<td align= center width=100><p>...</p></td>
+		<td align= center width=100><p></p></td>
+		<td align= center width=100><p></p></td>
+		<td align= center width=100><p></p></td>
+		<td align= center width=100><p></p></td>
+		<td align= center width=100><p></p></td>
+		<td align= center width=100><p></p></td>
+	</tr>
+
+	</table>
+
+	<br>
+
+	<p>Pierre a rejoint ce réseau social. Il est devenu ami avec Nabil et John.</p>
+	<li>Modifier votre programme pour ajouter Pierre au graphe G.</li>
+	<li>Quel est le nouveau diamètre du graphe&nbsp;?</li>
+	<div><textarea class=Reponse rows="2"></textarea></div>
+
+	<li>Quel est le nouveau rayon du graphe&nbsp;?</li>
+	<div><textarea class=Reponse rows="2"></textarea></div>
+
+
+	<li>Qui sont les nouveaux centres du graphe&nbsp;?</li>
+	<div><textarea class=Reponse rows="2"></textarea></div>
+
+	<!-- fin page 4 -->
+	<div style="break-after:page"></div>
+	<!-- début page 5 -->
+
+
+	<p text-align:center> <b>Étude d'un réseau terroriste</b><p>
+	<h1>Les attentats du 11 septembre 2001</h1>
+	<p>Les attentats du 11 septembre 2001 (communément appelés 11 Septembre, ou 9/11 et Nine eleven en anglais) sont quatre attentats-suicides islamistes perpétrés le même jour aux États-Unis et provoquant la mort de 2 977 personnes, dans le centre de Manhattan à New York, à Arlington et à Shanksville, en moins de deux heures, entre 8h14 et 10h03. Ils sont réalisés par des membres du réseau djihadiste Al-Qaïda et visent des bâtiments symboliques, dont le World Trade Center.</p>
+	<img style="float:left; text-align:center; height:8em;" src="images/2-world-trade-center-9-11.png" alt="Les tours du World Trade Center en feu">
+
+	<p>Au matin du 11 septembre 2001, dix-neuf terroristes détournent quatre avions de ligne. Deux avions sont projetés sur les tours jumelles du World Trade Center (WTC) à Manhattan (New York) et un troisième sur le Pentagone, à Washington, tuant toutes les personnes à bord et de nombreuses autres travaillant dans ces immeubles. Les deux tours du World Trade Center s'effondrent moins de deux heures plus tard. Le quatrième avion, qui vole en direction de Washington, s'écrase en rase campagne à Shanksville, en Pennsylvanie, après que des passagers et membres d'équipage, prévenus par téléphone de ce qui se passait ailleurs, ont tenté en vain d'en reprendre le contrôle.</p>
+
+	<h1 class=after>Analyse des données</h1>
+	<p>Mark Sageman est un ancien agent de la CIA qui a écrit de nombreux livres sur le terrorisme. Il a étudié la vie de certains terroristes appartenant à la cellule de Hambourg qui à l'origine des attentats du 11 septembre 2001. Il a recensé les liens sociaux (liens d'amitié, relation familiale, groupes de prière, etc.) au sein de cette cellule  et a regroupé toutes ces informations dans un fichier.<a style='font-size:10.0pt;font-family:"Cambria","serif";' href="#_ftn1" name="_ftnref1" title="" ><sup>[1]</sup></a> </p>
+	<div style="float:right; border:solid 1px">
+	<p>Un fichier CSV (Comma-Separated Values) <br>est un fichier texte dont les valeurs <br>sont séparées par des virgules.</p>
+	</div>
+	
+	<p>Le fichier «&nbsp;9-11.csv&nbsp;» donne la liste de ces liens parmi les membres du réseau principal<a style='font-size:10.0pt;font-family:"Cambria","serif";' href="#_ftn2" name="_ftnref2" title="" ><sup>[2]</sup></a>. Copier le dans votre répertoire de programmation.</p>
+
+	<li>Pour lire ce fichier dans un programme, nous utilisons le module <code>csv</code>. Commencer un nouveau programme avec les instructions suivantes et l'enregistrer dans le même répertoire que le fichier 9-11.csv.</li>
+	<code>
+	import csv<br>
+	import networkx as nx<br>
+	<br>
+	# lecture du fichier<br>
+	in_file=csv.reader(open('9-11.csv','r'))<br>
+	<br>
+	# graph G<br>
+	G=nx.Graph()<br>
+	<br>
+	# aretes et sommets<br>
+	for line in in_file:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;G.add_edge(line[0],line[1])<br>
+	</code>
+
+
+	 	<!-- foonote -->
+	
+	<div><br clear=all>
+	<hr align=left size=1 width="33%">
+	<div id=ftn1>
+	<p class=FootnoteText><a href="#_ftnref1" name="_ftn1"><span class=FootnoteReference>[1]</span></a>  Les données sont disponible sur :<a href="https://github.com/maksim2042/SNABook/blob/master/chapter4/9_11_edgelist.txt"> https://github.com/maksim2042/SNABook/blob/master/chapter4/9_11_edgelist.txt</a>   
+	</p>
+	<div id=ftn2>
+	<p class=FootnoteText><a href="#_ftnref2" name="_ftn2"><span class=FootnoteReference>[2]</span></a>  Les données récoltées par Mark Sageman étant fragmentaires et incomplètes, son fichier contient plusieurs réseaux déconnectés les uns des autres. Ici nous nous intéressons au graphe formé par le réseau principal.</a>   
+	</p>
+
+
+	</div>
+
+
+	<!-- fin page 5 -->
+	<div style="break-after:page"></div>
+	<!-- début page 6 -->
+
+	<li>Quelle instruction peut-on ajouter au programme pour afficher le nombre de membres de ce réseau&nbsp;?</li>
+	<div><textarea class=Reponse rows="2"></textarea></div>
+
+	<li>Tester cette instruction. Combien y-avait-il de membres dans ce réseau&nbsp;?</li>
+	<div><textarea class=Reponse rows="2"></textarea></div>
+ 
+	<li>Les membres du réseau semblaient très proches les uns des autres. A travers combien de personnes au maximum étaient-ils tous  liés les uns aux autres&nbsp;?</li>
+	<div><textarea class=Reponse rows="3"></textarea></div>
+
+	<li>Qui semblait être au centre de ce réseau terroriste&nbsp;?</li>
+	<div><textarea class=Reponse rows="3"></textarea></div>
+
+	<li>En affichant le graphe de ce réseau, donner deux noms de personnes qui semblaient le plus éloignées du centre&nbsp;?</li>
+	<div><textarea class=Reponse rows="3"></textarea></div>
+
+	<li>En agrandissant la représentation du graphe, plusieurs sous-réseaux semblent apparaître. A votre avis combien de sous-réseaux y avait-il et quel était le personnage principal de chaque sous-réseau&nbsp;?</li>
+	<div><textarea class=Reponse rows="6"></textarea></div>
+
+    
+    </ol>	
+  </body>
+</html>
